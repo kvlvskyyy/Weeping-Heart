@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 325536536}
   - component: {fileID: 325536537}
   - component: {fileID: 325536538}
+  - component: {fileID: 325536539}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -199,6 +200,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
   orientation: {fileID: 0}
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3485e717-8f2f-40a5-b5fe-2b2a88616ab2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+    m_Priority: 0
 --- !u!114 &325536538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +226,30 @@ MonoBehaviour:
   head: {fileID: 299952299}
   sensitivity: 15
   maxLookAngle: 89
+--- !u!114 &325536539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325536535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86b1522a498b42a997f9d63dc0a28b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
+  orientation: {fileID: 1542044055}
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0e8ea9ab-b839-4a18-aa3c-678f1da492e2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+    m_Priority: 0
 --- !u!1 &360141077
 GameObject:
   m_ObjectHideFlags: 0
