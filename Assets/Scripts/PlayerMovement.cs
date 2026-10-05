@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float drainRate = 1f;
     public float regenRate = 1f;
 
+    [Header("Scripts")] 
+    public Inspection inspectionScript;
+
     public bool isSprinting;
     public bool isResting;
     public Transform orientation;
@@ -19,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     public InputAction moveAction;
     public InputAction sprintAction;
     Vector3 moveDirection;
-    
     Vector2 inputVector;
 
     private void Start()
@@ -82,8 +84,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
-        inputVector = moveAction.ReadValue<Vector2>();
+        if (inspectionScript.isInspecting)
+        {
+            inputVector = Vector2.zero;
+            return;
+        }
         
+        inputVector = moveAction.ReadValue<Vector2>();
     }
 
     private void MovePlayer()
