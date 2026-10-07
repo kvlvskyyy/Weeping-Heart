@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   inspectionScript: {fileID: 1514980087}
-  sceneToLoad: 
+  sceneToLoad: HouseScene
 --- !u!1 &1747319466
 GameObject:
   m_ObjectHideFlags: 0
