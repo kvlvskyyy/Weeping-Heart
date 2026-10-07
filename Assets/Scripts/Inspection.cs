@@ -6,6 +6,7 @@ public class Inspection : MonoBehaviour
     public InputAction inspectAction;
     public InputAction leaveInspectionAction;
     public bool isInspecting = false;
+    public bool isEntering;
     public Transform currentAnchor;
 
     private void OnEnable()
@@ -44,6 +45,11 @@ public class Inspection : MonoBehaviour
                     {
                         currentAnchor = hit.transform.GetChild(0);
                         isInspecting = true;
+                    }
+                    
+                    if (hit.collider.tag == "House")
+                    {
+                        isEntering = true;
                     }
                 }
                 }
