@@ -151,6 +151,37 @@ Transform:
   - {fileID: 1393772741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &183153189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183153190}
+  m_Layer: 0
+  m_Name: WartPoint_L_Hnd_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183153190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183153189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00014, y: 0.000761, z: 0.000294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1393772742}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198327047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1812,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 577223292419059915, guid: 1ca8a0b4eda142043a4120b0f1a9c0ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1622597710}
+    - targetCorrespondingSourceObject: {fileID: 4058852915679833821, guid: 1ca8a0b4eda142043a4120b0f1a9c0ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 183153190}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7672225490130652437, guid: 1ca8a0b4eda142043a4120b0f1a9c0ba, type: 3}
       insertIndex: -1
@@ -1789,6 +1823,11 @@ PrefabInstance:
 --- !u!4 &1393772741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ca8a0b4eda142043a4120b0f1a9c0ba, type: 3}
+  m_PrefabInstance: {fileID: 1393772740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1393772742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4058852915679833821, guid: 1ca8a0b4eda142043a4120b0f1a9c0ba, type: 3}
   m_PrefabInstance: {fileID: 1393772740}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1393772743 stripped
