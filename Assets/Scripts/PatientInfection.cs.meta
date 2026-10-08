@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 78777a2237816004488f200acabf3c98
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wartPrefab: {fileID: 919132149155446097, guid: df69e42b97628f4479b6fad1dfd889e0, type: 3}
+  - leftHandBone: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
