@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Patient
   - House
+  - BodyPart
   layers:
   - Default
   - TransparentFX
