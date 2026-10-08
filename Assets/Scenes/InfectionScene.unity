@@ -685,6 +685,7 @@ Transform:
   m_Children:
   - {fileID: 1705246354}
   - {fileID: 2096005249}
+  - {fileID: 1697923264}
   m_Father: {fileID: 1107584039}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &497741439
@@ -1275,7 +1276,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1697923264}
   - {fileID: 497741438}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 1250802648}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2553,59 +2553,59 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1107584039}
+    m_TransformParent: {fileID: 497741438}
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.5393667
+      value: 3.7356322
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.5393667
+      value: 5.8890142
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.5393667
+      value: 3.692307
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4611499
+      value: 0.8991195
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0466499
+      value: 0.5010222
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.36742973
+      value: 0.98862106
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4755389
+      value: 0.6494966
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12819406
+      value: -0.42077747
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5998777
+      value: 0.12946148
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6305361
+      value: 0.61995184
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -39.388
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 71.329
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 77.143
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_Name
@@ -2744,11 +2744,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
   infectionSeverity: 0
+  beenTreated: 0
   wartPrefab: {fileID: 919132149155446097, guid: df69e42b97628f4479b6fad1dfd889e0, type: 3}
   wartPoints:
   - {fileID: 1694655379}
   - {fileID: 1360959520}
   - {fileID: 1209318092}
+  spawnedWarts: []
 --- !u!1 &1946757896
 GameObject:
   m_ObjectHideFlags: 0
