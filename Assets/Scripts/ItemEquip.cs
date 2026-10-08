@@ -1,24 +1,46 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ItemEquip : MonoBehaviour
 {
     public Inventory inventory;
     public GameObject syringe;
 
+    public InputAction addSyringeAction;
+    public InputAction equipSyringeAction;
+    public InputAction injectAction;
+
+    public float syringeCount;
+
     private bool syringeEquipped = false;
-    private void Update()
+
+
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        addSyringeAction.Enable();
+        equipSyringeAction.Enable();
+        injectAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        addSyringeAction.Disable();
+        equipSyringeAction.Disable();
+        injectAction.Disable();
+    }
+    void Update()
+    {
+        if (addSyringeAction.WasPressedThisFrame())
         {
-            inventory.AddSyringe(1);
+            inventory.AddSyringe(syringeCount);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (equipSyringeAction.WasPressedThisFrame())
         {
             EquipSyringe();
         }
 
-        if (Input.GetMouseButtonDown(0) && syringeEquipped)
+        if (injectAction.WasPressedThisFrame() && syringeEquipped)
         {
             TryInject();
         }
@@ -38,6 +60,7 @@ public class ItemEquip : MonoBehaviour
         Debug.Log("Syringe Equip");
     }
 
+
     void TryInject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -51,11 +74,7 @@ public class ItemEquip : MonoBehaviour
         }
 
         PatientInfection patient = hit.collider.GetComponentInParent<PatientInfection>();
-
-        if (patient == null)
-        {
-            return;
-        }
+        
 
         if (!inventory.UseSyringe())
         {

@@ -29,12 +29,13 @@ Transform:
   m_GameObject: {fileID: 119481992722893204}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0.0056898594, y: -0.76365, z: 0.24956036}
+  m_LocalPosition: {x: -2.994306, y: -0.76365, z: 5.249563}
   m_LocalScale: {x: 0.5, y: 1.125, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6451176709229631238}
   - {fileID: 1803110674499463886}
+  - {fileID: 6734685384187235800}
   m_Father: {fileID: 5750555990703346923}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6952013690691446636
@@ -155,6 +156,8 @@ GameObject:
   - component: {fileID: 5750555990703346923}
   - component: {fileID: 1076365269179651208}
   - component: {fileID: 5896763085031648597}
+  - component: {fileID: 7661169915121275243}
+  - component: {fileID: 4197463400359892528}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -290,6 +293,88 @@ MonoBehaviour:
   panSpeed: 1
   panLimitX: 1
   panLimitY: 1
+--- !u!114 &7661169915121275243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916074081962509328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0138f9959f4335b4db96bce5c701f587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemEquip
+  inventory: {fileID: 4197463400359892528}
+  syringe: {fileID: 7722883310865104843}
+  addSyringeAction:
+    m_Name: Add Syringe
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a5571704-f6d9-49d1-99a5-5b2a57f399b7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7a82cbe1-a895-4d12-a19f-42ac27795dbf
+      m_Path: <Keyboard>/p
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Add Syringe
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  equipSyringeAction:
+    m_Name: Equip Syringe
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f961518b-df74-4a45-b826-42f9541e05a1
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 252f491b-d39c-4f24-a0b4-cfa81530e07e
+      m_Path: <Keyboard>/4
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Equip Syringe
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  injectAction:
+    m_Name: Inject
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6f258d7b-c1a8-4098-89ea-ffe8cdcc7601
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c2186699-1b89-4f54-b3ad-d25d2cb89f45
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Inject
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  syringeCount: 1
+--- !u!114 &4197463400359892528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916074081962509328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141dcd2fdd99a944cace519a995ac24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  syringes: 0
 --- !u!1 &2343205655852728312
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +390,7 @@ GameObject:
   - component: {fileID: 301050426932539203}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,6 +562,7 @@ MonoBehaviour:
     m_Flags: 0
     m_Priority: 0
   isInspecting: 0
+  isEntering: 0
   currentAnchor: {fileID: 0}
 --- !u!1 &4942057816721340886
 GameObject:
@@ -541,3 +627,86 @@ Transform:
   - {fileID: 8094698679690040164}
   m_Father: {fileID: 4103835028498242169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1733002271436269250
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4103835028498242169}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.7356322
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.8890142
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.692307
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8991195
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5010222
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.98862106
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6494966
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.42077747
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.12946148
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.61995184
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_Name
+      value: Syringe
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+--- !u!4 &6734685384187235800 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+  m_PrefabInstance: {fileID: 1733002271436269250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7722883310865104843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+  m_PrefabInstance: {fileID: 1733002271436269250}
+  m_PrefabAsset: {fileID: 0}

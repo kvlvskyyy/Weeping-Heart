@@ -618,6 +618,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.2729893
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6302372
+      objectReference: {fileID: 0}
     - target: {fileID: 7469735914251772614, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_Name
       value: Patient
@@ -841,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5750555990703346923, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.025655119
+      value: 3.0256553
       objectReference: {fileID: 0}
     - target: {fileID: 5750555990703346923, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: m_LocalPosition.y
@@ -849,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5750555990703346923, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.74156016
+      value: -4.25844
       objectReference: {fileID: 0}
     - target: {fileID: 5750555990703346923, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: m_LocalRotation.w

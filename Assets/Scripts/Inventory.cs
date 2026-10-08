@@ -3,7 +3,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     //Syringes
-    public int syringes = 0;
+    public float syringes = 0;
 
     public bool HasSyringe()
     {
@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void AddSyringe(int amount)
+    public void AddSyringe(float amount)
     {
         syringes += amount;
         Debug.Log(syringes);
