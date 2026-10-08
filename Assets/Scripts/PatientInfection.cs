@@ -63,4 +63,11 @@ public class PatientInfection : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+    public void Cure(float amount)
+    {
+        infectionSeverity -= amount;
+        infectionSeverity = Mathf.Max(0, (float)infectionSeverity);
+
+        Debug.Log( amount + ", " + infectionSeverity);
+    }
 }
