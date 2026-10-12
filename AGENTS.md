@@ -2,7 +2,7 @@
 - Project name: Weeping-Heart
 - Unity version: Unity 6000.6.3f1
 - Active game object:
-  - Name: RForeArmWart
+  - Name: Player
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

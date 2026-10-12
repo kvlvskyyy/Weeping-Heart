@@ -10,6 +10,7 @@ public class PlayerCamera : MonoBehaviour
 
     [Header("Camera Settings")] 
     public float sensitivity = 15f;
+    public float inspectionSensitivity = 15f;
     public float maxLookAngle = 89f;
     
     [Header("Inspection Settings")]
@@ -38,11 +39,14 @@ public class PlayerCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        float mouseX = lookInput.x * sensitivity * 0.01f;
-        float mouseY = lookInput.y * sensitivity * 0.01f;
+        float mouseX;
+        float mouseY;
 
         if (!inspectionScript.isInspecting)
         {
+            mouseX = lookInput.x * sensitivity * 0.01f;
+            mouseY = lookInput.y * sensitivity * 0.01f;
+            
             cameraPitch -= mouseY;
             cameraPitch = Mathf.Clamp(cameraPitch, -maxLookAngle, maxLookAngle);
             head.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
@@ -52,17 +56,23 @@ public class PlayerCamera : MonoBehaviour
 
         else
         {
+            mouseX = lookInput.x * inspectionSensitivity * 0.01f;
+            mouseY = lookInput.y * inspectionSensitivity * 0.01f;
+            
             cameraPitch = 0f;
             head.localRotation = Quaternion.Euler(0f, 0f, 0f);
             playerBody.rotation = inspectionScript.currentAnchor.rotation;
             playerBody.position = inspectionScript.currentAnchor.position;
-            
-            Vector3 newPosition = head.localPosition;
-            newPosition.x += mouseX * panSpeed;
-            newPosition.y += mouseY * panSpeed; 
-            newPosition.x = Mathf.Clamp(newPosition.x, startPosition.x - panLimitX, startPosition.x + panLimitX);
-            newPosition.y = Mathf.Clamp(newPosition.y, startPosition.y - panLimitY, startPosition.y + panLimitY);
-            head.localPosition = newPosition;
+
+            if (!inspectionScript.isManipulating)
+            {
+                Vector3 newPosition = head.localPosition;
+                newPosition.x += mouseX * panSpeed;
+                newPosition.y += mouseY * panSpeed; 
+                newPosition.x = Mathf.Clamp(newPosition.x, startPosition.x - panLimitX, startPosition.x + panLimitX);
+                newPosition.y = Mathf.Clamp(newPosition.y, startPosition.y - panLimitY, startPosition.y + panLimitY);
+                head.localPosition = newPosition;
+            }
         }
         
        
