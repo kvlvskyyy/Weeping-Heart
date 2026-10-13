@@ -16,6 +16,8 @@ public class Inspection : MonoBehaviour
     public Transform selectedBodyPart;
     public LayerMask inspectableLayer;
     public PlayerMovement playerMovement;
+    public GameObject playerLantern;
+    public GameObject cameraLantern;
     
     [Header("Manipulation Setiings")]
     public bool isManipulating = false;
@@ -46,10 +48,12 @@ public class Inspection : MonoBehaviour
 
     void Update()
     {
-        if (!playerMovement.isInHouse)
+        if (playerMovement.isInHouse)
         {
             if (isInspecting == true)
             {
+                playerLantern.SetActive(false);
+                cameraLantern.SetActive(true);
                 if (isManipulating == true)
                 {
                     spotLight.gameObject.SetActive(true);
@@ -61,7 +65,7 @@ public class Inspection : MonoBehaviour
 
                     selectedBodyPart.localRotation = initialRotation * Quaternion.Euler(0f, boneTwistAmount, 0f);
 
-                    if (selectBodyPartAction.WasReleasedThisFrame())
+                    if (selectBodyPartAction.WasPressedThisFrame())
                     {
                         isManipulating = false;
                         selectedBodyPart.localRotation = initialRotation;
@@ -112,6 +116,8 @@ public class Inspection : MonoBehaviour
             }
             else
             {
+                playerLantern.SetActive(true);
+                cameraLantern.SetActive(false);
                 if (inspectAction.WasPressedThisFrame())
                 {
                     if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3f))
