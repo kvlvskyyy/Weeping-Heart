@@ -9,12 +9,13 @@ public class Inspection : MonoBehaviour
     public InputAction amputateAction;
     
     public bool isInspecting = false;
-    public bool isEntering;
+    
     public Transform currentAnchor;
     
     public Light spotLight;
     public Transform selectedBodyPart;
     public LayerMask inspectableLayer;
+    public PlayerMovement playerMovement;
     
     [Header("Manipulation Setiings")]
     public bool isManipulating = false;
@@ -45,82 +46,81 @@ public class Inspection : MonoBehaviour
 
     void Update()
     {
-        if (isInspecting == true)
+        if (!playerMovement.isInHouse)
         {
-            if (isManipulating == true)
+            if (isInspecting == true)
             {
-                spotLight.gameObject.SetActive(true);
-
-                Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-                boneTwistAmount += mouseDelta.x * rotationSpeed;
-
-               boneTwistAmount = Mathf.Clamp(boneTwistAmount, -90f, 90f);
-
-                selectedBodyPart.localRotation = initialRotation * Quaternion.Euler(0f, boneTwistAmount, 0f);
-
-                if (selectBodyPartAction.WasReleasedThisFrame())
+                if (isManipulating == true)
                 {
-                    isManipulating = false;
-                    selectedBodyPart.localRotation = initialRotation;
-                    selectedBodyPart = null;
+                    spotLight.gameObject.SetActive(true);
+
+                    Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+                    boneTwistAmount += mouseDelta.x * rotationSpeed;
+
+                    boneTwistAmount = Mathf.Clamp(boneTwistAmount, -90f, 90f);
+
+                    selectedBodyPart.localRotation = initialRotation * Quaternion.Euler(0f, boneTwistAmount, 0f);
+
+                    if (selectBodyPartAction.WasReleasedThisFrame())
+                    {
+                        isManipulating = false;
+                        selectedBodyPart.localRotation = initialRotation;
+                        selectedBodyPart = null;
+                    }
+
+                    if (amputateAction.WasPressedThisFrame())
+                    {
+                        selectedBodyPart.localScale = Vector3.zero;
+                        selectedBodyPart.GetComponent<Collider>().enabled = false;
+
+                        isManipulating = false;
+                        selectedBodyPart = null;
+                        spotLight.gameObject.SetActive(false);
+                    }
                 }
-
-                if (amputateAction.WasPressedThisFrame())
+                else
                 {
-                    selectedBodyPart.localScale = Vector3.zero;
-                    selectedBodyPart.GetComponent<Collider>().enabled = false;
-                    
-                    isManipulating = false;
-                    selectedBodyPart = null;
-                    spotLight.gameObject.SetActive(false);
+
+                    if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3f,
+                            inspectableLayer))
+                    {
+                        spotLight.gameObject.SetActive(true);
+                        spotLight.transform.LookAt(hit.point);
+
+                        if (selectBodyPartAction.WasPressedThisFrame())
+                        {
+                            selectedBodyPart = hit.transform;
+                            initialRotation = selectedBodyPart.localRotation;
+                            boneTwistAmount = 0f;
+                            isManipulating = true;
+                        }
+
+                    }
+
+                    else
+                    {
+                        spotLight.gameObject.SetActive(false);
+                    }
+
+
+                    if (leaveInspectionAction.WasPressedThisFrame())
+                    {
+                        isInspecting = false;
+                        spotLight.gameObject.SetActive(false);
+                    }
                 }
             }
             else
             {
-
-                if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3f, inspectableLayer))
+                if (inspectAction.WasPressedThisFrame())
                 {
-                    spotLight.gameObject.SetActive(true);
-                    spotLight.transform.LookAt(hit.point);
-
-                    if (selectBodyPartAction.WasPressedThisFrame())
+                    if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3f))
                     {
-                        selectedBodyPart = hit.transform;
-                        initialRotation = selectedBodyPart.localRotation;
-                        boneTwistAmount = 0f;
-                        isManipulating = true;
-                    }
-
-                }
-
-                else
-                {
-                    spotLight.gameObject.SetActive(false);
-                }
-
-
-                if (leaveInspectionAction.WasPressedThisFrame())
-                {
-                    isInspecting = false;
-                    spotLight.gameObject.SetActive(false);
-                }
-            }
-        }
-        else
-        { 
-            if (inspectAction.WasPressedThisFrame())
-            {
-                if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3f))
-                {
-                    if (hit.collider.tag == "Patient")
-                    {
-                        currentAnchor = hit.transform.GetChild(0);
-                        isInspecting = true;
-                    }
-                    
-                    if (hit.collider.tag == "House")
-                    {
-                        isEntering = true;
+                        if (hit.collider.tag == "Patient")
+                        {
+                            currentAnchor = hit.transform.GetChild(0);
+                            isInspecting = true;
+                        }
                     }
                 }
             }

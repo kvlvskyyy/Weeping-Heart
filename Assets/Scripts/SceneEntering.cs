@@ -4,15 +4,15 @@ using UnityEngine.SceneManagement;
 public class SceneEntering : MonoBehaviour
 {
 
-    public Inspection inspectionScript;
+    public PlayerMovement playerMovement;
     
     public string sceneToLoad;
     
     void Update()
     {
-        if (inspectionScript.isEntering)
+        if (playerMovement.isEntering)
         {
-            inspectionScript.isEntering = false;
+            playerMovement.isEntering = false;
             
             SceneManager.LoadScene(sceneToLoad);
         }

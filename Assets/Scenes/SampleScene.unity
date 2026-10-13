@@ -2350,11 +2350,6 @@ Transform:
   - {fileID: 2069742145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &1927157719 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2568702481928536060, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-  m_PrefabInstance: {fileID: 2116754972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2069742141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,56 +2551,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: spotLight
+      propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 1927157719}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: rotationSpeed
-      value: 5
+      objectReference: {fileID: 2116754973}
+    - target: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+      propertyPath: interactionAction.m_Name
+      value: Interaction
       objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: amputateAction.m_Name
-      value: Amputate
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: inspectableLayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: selectBodyPartAction.m_Name
-      value: Select Body Part
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: amputateAction.m_SingletonActionBindings.Array.size
+    - target: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+      propertyPath: interactionAction.m_SingletonActionBindings.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: selectBodyPartAction.m_SingletonActionBindings.Array.size
-      value: 1
+    - target: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+      propertyPath: interactionAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 545e894b-0eb4-4ff6-a979-af2b3520f3bd
       objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: amputateAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: c67fcb46-bd7e-4f7e-97ad-5664a3e73a39
+    - target: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+      propertyPath: interactionAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/e
       objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: amputateAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Mouse>/rightButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: amputateAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Amputate
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: selectBodyPartAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: f7a1a9f9-4e17-470d-b1e1-5c68d4f582f2
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: selectBodyPartAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Mouse>/leftButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: selectBodyPartAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Select Body Part
+    - target: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+      propertyPath: interactionAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Interaction
       objectReference: {fileID: 0}
     - target: {fileID: 1916074081962509328, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: m_Name
@@ -2651,23 +2618,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: panLimitX
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: panLimitY
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: inspectionSensitivity
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+--- !u!114 &2116754973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+  m_PrefabInstance: {fileID: 2116754972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86b1522a498b42a997f9d63dc0a28b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1001 &3800471781551499893
 PrefabInstance:
   m_ObjectHideFlags: 0
