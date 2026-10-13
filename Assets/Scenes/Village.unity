@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &700148719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
+  m_PrefabInstance: {fileID: 1658384119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86b1522a498b42a997f9d63dc0a28b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!64 &1112889968
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -238,17 +249,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1bdecfc63ac7754e8b40a6bacdc586b, type: 3}
---- !u!114 &1514980087 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-  m_PrefabInstance: {fileID: 1658384119}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d15a9b524b24a648e23b99f6d15844, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inspection
 --- !u!1001 &1658384119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 1719976182}
   - component: {fileID: 1719976185}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Door
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d38bbf85cae8041b553eda52a55af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  inspectionScript: {fileID: 1514980087}
+  playerMovement: {fileID: 700148719}
   sceneToLoad: HouseScene
 --- !u!1 &1747319466
 GameObject:
