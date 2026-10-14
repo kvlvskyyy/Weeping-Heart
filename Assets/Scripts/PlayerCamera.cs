@@ -72,6 +72,9 @@ public class PlayerCamera : MonoBehaviour
             head.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
             head.localPosition = startPosition;
+            
+            lanternAnchor.localPosition = Vector3.Lerp(lanternAnchor.localPosition, lanternStartPos, Time.deltaTime * 5f);
+            
         }
 
         else
@@ -106,11 +109,12 @@ public class PlayerCamera : MonoBehaviour
                     newPosition.y = Mathf.Clamp(newPosition.y, startPosition.y - panLimitY, startPosition.y + panLimitY);
                     head.localPosition = newPosition;
                     
-                    lanternAnchor.localPosition = Vector3.Lerp(lanternAnchor.localPosition, lanternStartPos, Time.deltaTime * 5f);
+                   
+
                 }
             }
+            
         }
-        
        
     }
 }
