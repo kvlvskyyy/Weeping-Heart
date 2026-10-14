@@ -692,6 +692,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: DaySystemsScript
+      value: 
+      objectReference: {fileID: 1362562474}
     - target: {fileID: 3476217759038821037, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_Name
       value: Patient
@@ -1567,12 +1571,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815bbe48a50e364f8bccd0b4dba5282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DaySystemsScript
-  inspection: {fileID: 0}
+  patients:
+  - {fileID: 1383295905}
   isDay: 0
   maxPatients: 4
   currentPatients: 0
   foodCost: 30
   canLeave: 0
+  canEnter: 1
   enterHouse:
     m_Name: Enter House
     m_Type: 0
@@ -1609,6 +1615,17 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+--- !u!114 &1383295905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+  m_PrefabInstance: {fileID: 361544325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78777a2237816004488f200acabf3c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
 --- !u!1 &1687541390
 GameObject:
   m_ObjectHideFlags: 0

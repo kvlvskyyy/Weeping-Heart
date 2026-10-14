@@ -1,20 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PatientInfection : MonoBehaviour
 {
+    public DaySystemsScript DaySystemsScript;
+
     public double infectionSeverity = 0;
     public bool beenTreated = false;
+    public bool lost = false;
+    public int cureDay = 0;
+    public double cureAmount = 1;
 
     public GameObject wartPrefab;
     public Transform[] wartPoints;
 
     public List<GameObject> spawnedWarts = new List<GameObject>();
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(ProgressInfection());
+        if (DaySystemsScript.isDay == cureDay)
+        {
+            cureDay = 0;
+            infectionSeverity -= cureAmount;
+            beenTreated = false;
+
+            if (infectionSeverity < 0)
+            {
+                infectionSeverity = 0;
+            }
+
+            if (infectionSeverity < 1)
+            {
+                RemoveWarts(2);
+            }
+            else if (infectionSeverity < 1.5)
+            {
+                RemoveWarts(1);
+            }
+
+        }
     }
 
     public void AddWart(int amount)
@@ -47,54 +73,39 @@ public class PatientInfection : MonoBehaviour
         }
     }
 
-    IEnumerator ProgressInfection()
+    public void ProgressInfection()
     {
-        while (infectionSeverity < 4 && beenTreated == false)
+        if (infectionSeverity >= 1 && infectionSeverity < 2)
         {
-            if (infectionSeverity >= 1 && infectionSeverity < 2)
-            {
-                AddWart(1);
-            }
-            else if (infectionSeverity >= 2 && infectionSeverity < 3)
-            {
-
-            }
-            else if (infectionSeverity >= 3 && infectionSeverity < 4)
-            {
-
-            }
-
-            infectionSeverity += 0.5;
-            yield return new WaitForSeconds(2);
+            Debug.Log("Warts - stage 1");
+            AddWart(1);
         }
+        else if (infectionSeverity >= 2 && infectionSeverity < 3)
+        {
+            Debug.Log("Blossoming - stage 1");
+        }
+        else if (infectionSeverity >= 3 && infectionSeverity < 4)
+        {
+            Debug.Log("Weeping Heart - stage 3");
+        }
+        else if (infectionSeverity >= 4)
+        {
+            Debug.Log("Lost - stage 4");
+            Destroy(gameObject);
+            lost = true;
+        }
+        infectionSeverity += 0.5;
     }
     public void Cure(double amount)
     {
+        cureAmount = amount;
         beenTreated = true;
-        StartCoroutine(DelayedCure(amount));
+        DelayedCure();
     }
 
-    IEnumerator DelayedCure(double amount)
+    public void DelayedCure()
     {
-        yield return new WaitForSeconds(5);
-
-        infectionSeverity -= amount;
-
-        if (infectionSeverity < 0)
-        {
-            infectionSeverity = 0;
-        }
-
-        if (infectionSeverity < 1)
-        {
-            RemoveWarts(2);
-        }
-        else if (infectionSeverity < 1.5)
-        {
-            RemoveWarts(1);
-        }
-
-        Debug.Log(infectionSeverity);
+        cureDay = DaySystemsScript.isDay + 1;
     }
     void RemoveWarts(int amount)
     {

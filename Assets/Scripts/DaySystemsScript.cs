@@ -1,9 +1,11 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DaySystemsScript : MonoBehaviour
 {
+    public List<PatientInfection> patients = new List<PatientInfection>();
+
     public int isDay = 0;
     public int maxPatients = 4;
     public int currentPatients = 0;
@@ -20,6 +22,7 @@ public class DaySystemsScript : MonoBehaviour
         enterHouse.Enable();
         leaveHouse.Enable();
     }
+
     private void OnDisable()
     {
         enterHouse.Disable();
@@ -29,15 +32,16 @@ public class DaySystemsScript : MonoBehaviour
     void Start()
     {
         isDay++;
-        Debug.Log("It's day" + isDay);
+        Debug.Log("It's day " + isDay);
     }
+
     void Update()
     {
         if (enterHouse.WasPressedThisFrame() && canEnter)
         {
             EnteredHouse();
-            
         }
+
         if (leaveHouse.WasPressedThisFrame() && canLeave)
         {
             LeftHouse();
@@ -46,40 +50,47 @@ public class DaySystemsScript : MonoBehaviour
 
     void EnteredHouse()
     {
-        if (canEnter)
-        {
-            currentPatients++;
-            Debug.Log(currentPatients);
-            Debug.Log("Entered");
-            
-            canLeave = true;
-            canEnter = false;
-        }
+        currentPatients++;
+        Debug.Log(currentPatients);
+        Debug.Log("Entered");
+
+        canLeave = true;
+        canEnter = false;
     }
 
     void LeftHouse()
     {
-        if (canLeave)
-        {
-            Debug.Log("Left");
-            canLeave = false;
-            canEnter = true;
-            SurpassPatientAmount();
-        }
+        Debug.Log("Left");
+
+        canLeave = false;
+        canEnter = true;
+
+        SurpassPatientAmount();
     }
 
     void SurpassPatientAmount()
     {
-            if (currentPatients == maxPatients)
-            {
-                EndDay();
-            }
+        if (currentPatients >= maxPatients)
+        {
+            EndDay();
+        }
     }
 
     void EndDay()
     {
-        canEnter = false;
+        currentPatients = 0;
+
         Debug.Log("Day ended");
-        
+
+        foreach (PatientInfection patient in patients)
+        {
+            if (patient != null)
+            {
+                patient.ProgressInfection();
+            }
+        }
+
+        isDay++;
+        Debug.Log("It's day " + isDay);
     }
 }
