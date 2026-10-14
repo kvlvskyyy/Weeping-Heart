@@ -78,7 +78,6 @@ public class DaySystemsScript : MonoBehaviour
 
     void EndDay()
     {
-        currentPatients = 0;
 
         Debug.Log("Day ended");
 
@@ -89,7 +88,13 @@ public class DaySystemsScript : MonoBehaviour
                 patient.ProgressInfection();
             }
         }
+        StartDay();
+       
+    }
 
+    void StartDay()
+    {
+        currentPatients = 0;
         isDay++;
         Debug.Log("It's day " + isDay);
     }

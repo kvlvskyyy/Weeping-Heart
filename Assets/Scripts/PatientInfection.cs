@@ -75,35 +75,39 @@ public class PatientInfection : MonoBehaviour
 
     public void ProgressInfection()
     {
-        if (infectionSeverity >= 1 && infectionSeverity < 2)
+        if (!beenTreated)
         {
-            Debug.Log("Warts - stage 1");
-            AddWart(1);
+            if (infectionSeverity >= 1 && infectionSeverity < 2)
+            {
+                Debug.Log("Warts - stage 1");
+                AddWart(1);
+            }
+            else if (infectionSeverity >= 2 && infectionSeverity < 3)
+            {
+                Debug.Log("Blossoming - stage 1");
+            }
+            else if (infectionSeverity >= 3 && infectionSeverity < 4)
+            {
+                Debug.Log("Weeping Heart - stage 3");
+            }
+            else if (infectionSeverity >= 4)
+            {
+                Debug.Log("Lost - stage 4");
+                Destroy(gameObject);
+                lost = true;
+            }
+            infectionSeverity += 0.5;
         }
-        else if (infectionSeverity >= 2 && infectionSeverity < 3)
-        {
-            Debug.Log("Blossoming - stage 1");
-        }
-        else if (infectionSeverity >= 3 && infectionSeverity < 4)
-        {
-            Debug.Log("Weeping Heart - stage 3");
-        }
-        else if (infectionSeverity >= 4)
-        {
-            Debug.Log("Lost - stage 4");
-            Destroy(gameObject);
-            lost = true;
-        }
-        infectionSeverity += 0.5;
+        
     }
     public void Cure(double amount)
     {
         cureAmount = amount;
         beenTreated = true;
-        DelayedCure();
+        DelayedCure(amount);
     }
 
-    public void DelayedCure()
+    public void DelayedCure(double amount)
     {
         cureDay = DaySystemsScript.isDay + 1;
     }
