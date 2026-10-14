@@ -15,6 +15,7 @@ public class SceneEntering : MonoBehaviour
             playerMovement.isEntering = false;
             
             SceneManager.LoadScene(sceneToLoad);
+            PlayerMovement.isInHouse = true;
         }
 }
 }

@@ -7836,7 +7836,7 @@ MonoBehaviour:
   inspectionScript: {fileID: 301050426932539203}
   isSprinting: 0
   isResting: 0
-  isInHouse: 1
+  isInHouse: 0
   isEntering: 0
   orientation: {fileID: 1803110674499463886}
   rb: {fileID: 8328188516506970749}
@@ -7961,7 +7961,7 @@ MonoBehaviour:
     m_Flags: 0
     m_Priority: 0
   lanternMoveSpeed: 0.005
-  lanternLimitX: 0.8
+  lanternLimitX: 2
   lanternLimitY: 0.8
   sensitivity: 15
   inspectionSensitivity: 5
@@ -10844,7 +10844,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: c67fcb46-bd7e-4f7e-97ad-5664a3e73a39
-      m_Path: <Mouse>/rightButton
+      m_Path: <Keyboard>/backspace
       m_Interactions: 
       m_Processors: 
       m_Groups: 

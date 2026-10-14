@@ -48,7 +48,7 @@ public class Inspection : MonoBehaviour
 
     void Update()
     {
-        if (playerMovement.isInHouse)
+        if (PlayerMovement.isInHouse)
         {
             if (isInspecting == true)
             {

@@ -1381,11 +1381,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 4888467350165914330, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
   m_PrefabInstance: {fileID: 2116754972}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1155453157 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 27506967968348973, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-  m_PrefabInstance: {fileID: 2116754972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227257210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,11 +1494,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1777973058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1414093918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 27506967968564899, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-  m_PrefabInstance: {fileID: 2116754972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1420997115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1912,11 +1902,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1777973058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1640328351 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5208274683527479188, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-  m_PrefabInstance: {fileID: 2116754972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1684188169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,17 +2262,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: cameraLantern
-      value: 
-      objectReference: {fileID: 1414093918}
-    - target: {fileID: 301050426932539203, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: playerLantern
-      value: 
-      objectReference: {fileID: 1640328351}
     - target: {fileID: 1076365269179651208, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: isInHouse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1916074081962509328, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
       propertyPath: m_Name
@@ -2334,28 +2311,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: lanternAnchor
-      value: 
-      objectReference: {fileID: 1155453157}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: lanternAction.m_Name
-      value: Lantern
+      propertyPath: lanternLimitX
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: lanternAction.m_SingletonActionBindings.Array.size
+      propertyPath: lanternLimitY
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: lanternAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 312b6567-6387-4198-b957-58a3998b0ad3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: lanternAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Mouse>/rightButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5896763085031648597, guid: ec5f77fda49c4fb46af38e034ca90148, type: 3}
-      propertyPath: lanternAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Lantern
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

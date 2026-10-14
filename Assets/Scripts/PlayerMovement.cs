@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isSprinting;
     public bool isResting;
-    public bool isInHouse;
+    public static bool isInHouse;
     public bool isEntering;
     public Transform orientation;
     public Rigidbody rb;
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Debug.Log("Touched the door ahh");
                     isEntering = true;
-                    isInHouse = true;
+                    
                 }
             }
         }
