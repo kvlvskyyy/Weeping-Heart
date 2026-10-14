@@ -203,6 +203,8 @@ MonoBehaviour:
   inspectionScript: {fileID: 301050426932539203}
   isSprinting: 0
   isResting: 0
+  isInHouse: 0
+  isEntering: 0
   orientation: {fileID: 1803110674499463886}
   rb: {fileID: 8328188516506970749}
   moveAction:
@@ -270,6 +272,24 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Sprint
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  interactionAction:
+    m_Name: Interaction
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d06aa12b-d353-4773-99fa-a6394bd3ff4d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 545e894b-0eb4-4ff6-a979-af2b3520f3bd
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interaction
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
@@ -600,13 +620,13 @@ MonoBehaviour:
     m_Flags: 0
     m_Priority: 0
   isInspecting: 0
-  isEntering: 0
   currentAnchor: {fileID: 0}
   spotLight: {fileID: 2568702481928536060}
   selectedBodyPart: {fileID: 0}
   inspectableLayer:
     serializedVersion: 2
     m_Bits: 8
+  playerMovement: {fileID: 1076365269179651208}
   isManipulating: 0
   rotationSpeed: 5
 --- !u!1 &4942057816721340886
