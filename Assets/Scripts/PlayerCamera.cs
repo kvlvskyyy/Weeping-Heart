@@ -8,6 +8,14 @@ public class PlayerCamera : MonoBehaviour
     public Transform head;
     public Inspection inspectionScript;
 
+    [Header("Lantern Settings")] 
+    public Transform lanternAnchor;
+    public InputAction lanternAction;
+    public float lanternMoveSpeed = 0.005f;
+    public float lanternLimitX = 0.8f;
+    public float lanternLimitY = 0.8f;
+    private Vector3 lanternStartPos;
+
     [Header("Camera Settings")] 
     public float sensitivity = 15f;
     public float inspectionSensitivity = 15f;
@@ -25,11 +33,23 @@ public class PlayerCamera : MonoBehaviour
     private void Start()
     {
         startPosition = head.localPosition;
+        lanternStartPos = lanternAnchor.localPosition;
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    
-   private void Update()
+
+    private void OnEnable()
+    {
+        lanternAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        lanternAction.Disable();
+    }
+
+    private void Update()
     {
         if (Mouse.current != null)
         {
@@ -52,6 +72,9 @@ public class PlayerCamera : MonoBehaviour
             head.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
             head.localPosition = startPosition;
+            
+            lanternAnchor.localPosition = Vector3.Lerp(lanternAnchor.localPosition, lanternStartPos, Time.deltaTime * 5f);
+            
         }
 
         else
@@ -66,15 +89,32 @@ public class PlayerCamera : MonoBehaviour
 
             if (!inspectionScript.isManipulating)
             {
-                Vector3 newPosition = head.localPosition;
-                newPosition.x += mouseX * panSpeed;
-                newPosition.y += mouseY * panSpeed; 
-                newPosition.x = Mathf.Clamp(newPosition.x, startPosition.x - panLimitX, startPosition.x + panLimitX);
-                newPosition.y = Mathf.Clamp(newPosition.y, startPosition.y - panLimitY, startPosition.y + panLimitY);
-                head.localPosition = newPosition;
+                if (lanternAction.IsPressed())
+                {
+                    Vector3 newPos = lanternAnchor.localPosition;
+                    newPos.x += lookInput.x * lanternMoveSpeed;
+                    newPos.y += lookInput.y * lanternMoveSpeed;
+                    
+                    newPos.x = Mathf.Clamp(newPos.x, lanternStartPos.x - lanternLimitX, lanternStartPos.x + lanternLimitX);
+                    newPos.y = Mathf.Clamp(newPos.y, lanternStartPos.y - lanternLimitY, lanternStartPos.y + lanternLimitY);
+                    
+                    lanternAnchor.localPosition = newPos;
+                }
+                else
+                {
+                    Vector3 newPosition = head.localPosition;
+                    newPosition.x += mouseX * panSpeed;
+                    newPosition.y += mouseY * panSpeed; 
+                    newPosition.x = Mathf.Clamp(newPosition.x, startPosition.x - panLimitX, startPosition.x + panLimitX);
+                    newPosition.y = Mathf.Clamp(newPosition.y, startPosition.y - panLimitY, startPosition.y + panLimitY);
+                    head.localPosition = newPosition;
+                    
+                   
+
+                }
             }
+            
         }
-        
        
     }
 }

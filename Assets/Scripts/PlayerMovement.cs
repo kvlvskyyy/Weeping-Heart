@@ -17,10 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isSprinting;
     public bool isResting;
+    public static bool isInHouse;
+    public bool isEntering;
     public Transform orientation;
     public Rigidbody rb;
     public InputAction moveAction;
     public InputAction sprintAction;
+    public InputAction interactionAction;
     Vector3 moveDirection;
     Vector2 inputVector;
 
@@ -35,17 +38,32 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction.Enable();
         sprintAction.Enable();
+        interactionAction.Enable();
     }
 
     private void OnDisable()
     {
         moveAction.Disable();
         sprintAction.Disable();
+        interactionAction.Disable();
     }
 
     private void Update()
     {
         MyInput();
+        if (interactionAction.WasPressedThisFrame())
+        {
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 3f))            
+            {
+                if (hit.collider.tag == "House")
+                {
+                    Debug.Log("Touched the door ahh");
+                    isEntering = true;
+                    
+                }
+            }
+        }
+
         if (sprintAction.IsPressed() && currentStamina > 0 && inputVector != Vector2.zero && !isResting)
         {
             isSprinting = true;
@@ -89,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
             inputVector = Vector2.zero;
             return;
         }
-        
         inputVector = moveAction.ReadValue<Vector2>();
     }
 
