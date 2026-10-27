@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
         for (int i = 1; i <= 8; i++)
         {
             string id = "patient_" + i.ToString("00");
@@ -39,6 +40,97 @@ public class GameManager : MonoBehaviour
         return allPatients.Find(p => p.patientID == id);
     }
 
+    public bool CanVisitPatient()
+    {
+        return patientsVisitedToday < maxPatientsPerDay;
+    }
+
+    public bool RegisterVisit()
+    {
+        if (!CanVisitPatient())
+            return false;
+
+        patientsVisitedToday++;
+        return true;
+    }
+
+    public void EndDay()
+    {
+        currentDay++;
+        patientsVisitedToday = 0;
+
+        Debug.Log("It's day " + currentDay);
+
+        ProgressAllPatients();
+    }
+
+    public void ProgressAllPatients()
+    {
+        foreach (PatientData patient in allPatients)
+        {
+            if (patient == null || patient.lost)
+                continue;
+            if (patient.cureDay > 0 &&
+                patient.cureDay <= currentDay)
+            {
+                patient.infectionSeverity =
+                    System.Math.Max(
+                        0,
+                        patient.infectionSeverity - patient.cureAmount
+                    );
+
+                patient.cureDay = 0;
+                patient.beenTreated = false;
+
+                patient.wartCount = Mathf.Min(
+                    patient.wartCount,
+                    GetWartLimit(patient.infectionSeverity)
+                );
+            }
+
+            if (patient.beenTreated)
+                continue;
+
+            patient.infectionSeverity = System.Math.Min(
+                4,
+                patient.infectionSeverity + 0.5
+            );
+
+            if (patient.infectionSeverity >= 1 &&
+                patient.infectionSeverity < 2)
+            {
+                patient.wartCount = Mathf.Min(
+                    patient.wartCount + 1, 3
+                );
+            }
+
+            if (patient.infectionSeverity >= 4)
+            {
+                patient.lost = true;
+            }
+        }
+
+        PatientInfection[] activePatients =
+            FindObjectsByType<PatientInfection>(FindObjectsSortMode.None);
+
+        foreach (PatientInfection patient in activePatients)
+        {
+            patient.RefreshFromData();
+        }
+    }
+
+    private int GetWartLimit(double severity)
+    {
+        if (severity < 1)
+            return 0;
+
+        if (severity < 2)
+            return 3;
+
+        return 3;
+    }
+
+    // Inventory Logic
     public bool HasSyringe()
     {
         return syringes > 0;

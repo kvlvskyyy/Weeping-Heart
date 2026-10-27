@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PatientInfection : MonoBehaviour
@@ -8,21 +6,20 @@ public class PatientInfection : MonoBehaviour
     public string patientID;
 
     private PatientData savedData;
-    public DaySystemsScript DaySystemsScript;
-
-    public double infectionSeverity = 0;
-    public bool beenTreated = false;
-    public bool lost = false;
-    public int cureDay = 0;
-    public double cureAmount = 1;
-    public double severityModifier = 0.5;
 
     public GameObject wartPrefab;
     public Transform[] wartPoints;
 
     public List<GameObject> spawnedWarts = new List<GameObject>();
+
     private void Start()
     {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager is missing!");
+            return;
+        }
+
         savedData = GameManager.Instance.GetPatientData(patientID);
 
         if (savedData == null)
@@ -31,43 +28,40 @@ public class PatientInfection : MonoBehaviour
             return;
         }
 
-        infectionSeverity = savedData.infectionSeverity;
-        beenTreated = savedData.beenTreated;
-        lost = savedData.lost;
-        cureDay = savedData.cureDay;
-        cureAmount = savedData.cureAmount;
-
-        AddWart(savedData.wartCount);
+        RefreshFromData();
     }
 
-    private void Update()
+    public void RefreshFromData()
     {
-        if (DaySystemsScript.isDay == cureDay)
+        if (savedData == null)
         {
-            cureDay = 0;
-            infectionSeverity -= cureAmount;
-            beenTreated = false;
+            if (GameManager.Instance == null)
+                return;
 
-            if (infectionSeverity < 0)
-            {
-                infectionSeverity = 0;
-            }
+            savedData = GameManager.Instance.GetPatientData(patientID);
 
-            if (infectionSeverity < 1)
-            {
-                RemoveWarts(2);
-            }
-            else if (infectionSeverity < 1.5)
-            {
-                RemoveWarts(1);
-            }
-
+            if (savedData == null)
+                return;
         }
-    }
 
-    public void AddWart(int amount)
-    {
-        amount = Mathf.Min(amount, wartPoints.Length);
+        foreach (GameObject wart in spawnedWarts)
+        {
+            if (wart != null)
+                Destroy(wart);
+        }
+
+        spawnedWarts.Clear();
+
+        if (savedData.lost)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+        int count = Mathf.Min(
+            savedData.wartCount,
+            wartPoints.Length
+        );
 
         List<int> availablePoints = new List<int>();
 
@@ -76,12 +70,16 @@ public class PatientInfection : MonoBehaviour
             availablePoints.Add(i);
         }
 
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < count; i++)
         {
-            int randomIndex = Random.Range(0, availablePoints.Count);
-            int selectedPoint = availablePoints[randomIndex];
+            if (availablePoints.Count == 0)
+                break;
 
-            Debug.Log("Wart spawned at point: " + selectedPoint);
+            int randomIndex = Random.Range(
+                0, availablePoints.Count
+            );
+
+            int selectedPoint = availablePoints[randomIndex];
 
             GameObject wart = Instantiate(
                 wartPrefab,
@@ -89,70 +87,21 @@ public class PatientInfection : MonoBehaviour
                 wartPoints[selectedPoint].rotation,
                 wartPoints[selectedPoint]
             );
-            spawnedWarts.Add(wart);
-            savedData.wartCount++;
 
+            spawnedWarts.Add(wart);
             availablePoints.RemoveAt(randomIndex);
         }
     }
 
-    public void ProgressInfection()
-    {
-        if (!beenTreated)
-        {
-            if (infectionSeverity >= 1 && infectionSeverity < 2)
-            {
-                Debug.Log("Warts - stage 1");
-                AddWart(1);
-            }
-            else if (infectionSeverity >= 2 && infectionSeverity < 3)
-            {
-                Debug.Log("Blossoming - stage 1");
-            }
-            else if (infectionSeverity >= 3 && infectionSeverity < 4)
-            {
-                Debug.Log("Weeping Heart - stage 3");
-            }
-            else if (infectionSeverity >= 4)
-            {
-                Debug.Log("Lost - stage 4");
-                Destroy(gameObject);
-                lost = true;
-            }
-            infectionSeverity += severityModifier;
-
-            savedData.infectionSeverity = infectionSeverity;
-            savedData.beenTreated = beenTreated;
-            savedData.lost = lost;
-        }
-        
-    }
     public void Cure(double amount)
     {
-        cureAmount = amount;
-        beenTreated = true;
-        DelayedCure(amount);
-    }
+        if (savedData == null)
+            return;
 
-    public void DelayedCure(double amount)
-    {
-        cureDay = DaySystemsScript.isDay + 1;
-    }
-    void RemoveWarts(int amount)
-    {
-        amount = Mathf.Min(amount, spawnedWarts.Count);
+        savedData.cureAmount = amount;
+        savedData.beenTreated = true;
 
-        for (int i = 0; i < amount; i++)
-        {
-            GameObject wart = spawnedWarts[spawnedWarts.Count - 1];
-
-            if (wart != null)
-            {
-                Destroy(wart);
-            }
-
-            spawnedWarts.RemoveAt(spawnedWarts.Count - 1);
-            savedData.wartCount--;
-        }
+        savedData.cureDay =
+            GameManager.Instance.currentDay + 1;
     }
 }
