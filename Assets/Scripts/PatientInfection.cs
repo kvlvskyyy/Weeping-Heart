@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PatientInfection : MonoBehaviour
 {
+    public string patientID;
+
+    private PatientData savedData;
     public DaySystemsScript DaySystemsScript;
 
     public double infectionSeverity = 0;
@@ -12,11 +15,30 @@ public class PatientInfection : MonoBehaviour
     public bool lost = false;
     public int cureDay = 0;
     public double cureAmount = 1;
+    public double severityModifier = 0.5;
 
     public GameObject wartPrefab;
     public Transform[] wartPoints;
 
     public List<GameObject> spawnedWarts = new List<GameObject>();
+    private void Start()
+    {
+        savedData = GameManager.Instance.GetPatientData(patientID);
+
+        if (savedData == null)
+        {
+            Debug.LogError("Patient data not found: " + patientID);
+            return;
+        }
+
+        infectionSeverity = savedData.infectionSeverity;
+        beenTreated = savedData.beenTreated;
+        lost = savedData.lost;
+        cureDay = savedData.cureDay;
+        cureAmount = savedData.cureAmount;
+
+        AddWart(savedData.wartCount);
+    }
 
     private void Update()
     {
@@ -68,6 +90,7 @@ public class PatientInfection : MonoBehaviour
                 wartPoints[selectedPoint]
             );
             spawnedWarts.Add(wart);
+            savedData.wartCount++;
 
             availablePoints.RemoveAt(randomIndex);
         }
@@ -96,7 +119,11 @@ public class PatientInfection : MonoBehaviour
                 Destroy(gameObject);
                 lost = true;
             }
-            infectionSeverity += 0.5;
+            infectionSeverity += severityModifier;
+
+            savedData.infectionSeverity = infectionSeverity;
+            savedData.beenTreated = beenTreated;
+            savedData.lost = lost;
         }
         
     }
@@ -125,6 +152,7 @@ public class PatientInfection : MonoBehaviour
             }
 
             spawnedWarts.RemoveAt(spawnedWarts.Count - 1);
+            savedData.wartCount--;
         }
     }
 }

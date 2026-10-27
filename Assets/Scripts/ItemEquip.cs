@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class ItemEquip : MonoBehaviour
 {
-    public Inventory inventory;
     public GameObject syringe;
 
     public InputAction addSyringeAction;
@@ -32,7 +31,7 @@ public class ItemEquip : MonoBehaviour
     {
         if (addSyringeAction.WasPressedThisFrame())
         {
-            inventory.AddSyringe(syringeCount);
+            GameManager.Instance.AddSyringe(Mathf.RoundToInt(syringeCount));
         }
 
         if (equipSyringeAction.WasPressedThisFrame())
@@ -48,7 +47,7 @@ public class ItemEquip : MonoBehaviour
 
     void EquipSyringe()
     {
-        if (!inventory.HasSyringe())
+        if (!GameManager.Instance.HasSyringe())
         {
             Debug.Log("Nope");
             return;
@@ -64,7 +63,6 @@ public class ItemEquip : MonoBehaviour
     void TryInject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
         RaycastHit hit;
 
         if (!Physics.Raycast(ray, out hit))
@@ -72,20 +70,21 @@ public class ItemEquip : MonoBehaviour
             Debug.Log("What the fuck are you aiming at");
             return;
         }
-
         PatientInfection patient = hit.collider.GetComponentInParent<PatientInfection>();
-        
-
-        if (!inventory.UseSyringe())
+        if (patient == null)
         {
-            Debug.Log("Nope");
+            Debug.Log("That's not the patient dumb fuck");
+            return;
+        }
+        if (!GameManager.Instance.UseSyringe())
+        {
+            Debug.Log("Broke boy");
             return;
         }
 
         patient.Cure(1.0);
         syringe.SetActive(false);
         syringeEquipped = false;
-
-        Debug.Log("Success");
+        Debug.Log("Injected " + patient.gameObject.name);
     }
 }

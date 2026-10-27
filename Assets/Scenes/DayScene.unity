@@ -693,6 +693,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: patientID
+      value: patient_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: DaySystemsScript
       value: 
       objectReference: {fileID: 1362562474}
@@ -1028,6 +1032,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641713237}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &857237829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: patientID
+      value: patient_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: DaySystemsScript
+      value: 
+      objectReference: {fileID: 1362562474}
+    - target: {fileID: 3476217759038821037, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_Name
+      value: Patient (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.922271
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000055200843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284560481992673303, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
 --- !u!1 &1008082957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DaySystemsScript
   patients:
   - {fileID: 1383295905}
+  - {fileID: 1656576065}
   isDay: 0
   maxPatients: 4
   currentPatients: 0
@@ -1619,6 +1689,17 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
   m_PrefabInstance: {fileID: 361544325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78777a2237816004488f200acabf3c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
+--- !u!114 &1656576065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+  m_PrefabInstance: {fileID: 857237829}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -2326,4 +2407,5 @@ SceneRoots:
   - {fileID: 1068099850}
   - {fileID: 540508564}
   - {fileID: 361544325}
+  - {fileID: 857237829}
   - {fileID: 1362562473}
