@@ -4,8 +4,17 @@
     <list default="true" id="91b5bd36-d91b-4712-8aa8-6e821b1cdbec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Weeping-Heart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Weeping-Heart/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inspection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inspection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/Patient.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Patient.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FarmerHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FarmerHouse.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HouseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HouseScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DaySystemsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DaySystemsScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemEquip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemEquip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PatientData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PatientData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PatientInfection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PatientInfection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneEntering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneEntering.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +28,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3KakmROp79bzff5fu2JxfblZlTk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,7 +49,7 @@
     "Unity Attach To.Attach to.executor": "Debug",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "inspection",
+    "git-widget-placeholder": "dev",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>

@@ -83,6 +83,7 @@ public class ItemEquip : MonoBehaviour
         }
 
         patient.Cure(1.0);
+        Debug.Log($"[SYRINGE] Injected actual ID: {patient.patientID}");
         syringe.SetActive(false);
         syringeEquipped = false;
         Debug.Log("Injected " + patient.gameObject.name);

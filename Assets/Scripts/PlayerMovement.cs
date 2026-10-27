@@ -57,9 +57,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (hit.collider.tag == "House")
                 {
-                    Debug.Log("Touched the door ahh");
-                    isEntering = true;
-                    
+                    SceneEntering door =  hit.collider.GetComponent<SceneEntering>();
+
+                    if (door != null)
+                    {
+                        door.EnterScene();
+                    }
                 }
             }
         }
@@ -116,11 +119,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (isSprinting)
         {
-            rb.AddForce(moveDirection * runSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection * (runSpeed * 10f), ForceMode.Force);
         }
         else
         {
-            rb.AddForce(moveDirection * walkSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection * (walkSpeed * 10f), ForceMode.Force);
         }
     }
 }

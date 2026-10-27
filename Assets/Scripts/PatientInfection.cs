@@ -29,6 +29,7 @@ public class PatientInfection : MonoBehaviour
     {
         if (savedData == null)
         {
+            
             if (GameManager.Instance == null)
                 return;
 
@@ -37,7 +38,8 @@ public class PatientInfection : MonoBehaviour
             if (savedData == null)
                 return;
         }
-
+        Debug.Log($"[SPAWN] Loading {patientID}. Warts allowed: {savedData.wartCount}. Cure Day is: {savedData.cureDay}");
+        
         foreach (GameObject wart in spawnedWarts)
         {
             if (wart != null)
@@ -52,40 +54,56 @@ public class PatientInfection : MonoBehaviour
             return;
         }
 
-        int count = Mathf.Min(
-            savedData.wartCount,
-            wartPoints.Length
-        );
-
-        List<int> availablePoints = new List<int>();
-
-        for (int i = 0; i < wartPoints.Length; i++)
+        while (savedData.activeWartPoints.Count > savedData.wartCount)
         {
-            availablePoints.Add(i);
+            savedData.activeWartPoints.RemoveAt(savedData.activeWartPoints.Count - 1);
         }
 
-        for (int i = 0; i < count; i++)
+        if (savedData.activeWartPoints.Count < savedData.wartCount)
         {
-            if (availablePoints.Count == 0)
-                break;
 
-            int randomIndex = Random.Range(
-                0, availablePoints.Count
-            );
+            List<int> availablePoints = new List<int>();
 
-            int selectedPoint = availablePoints[randomIndex];
+            for (int i = 0; i < wartPoints.Length; i++)
+            {
+                if (!savedData.activeWartPoints.Contains(i))
+                {
+                    availablePoints.Add(i);
+                }
+            }
 
-            GameObject wart = Instantiate(
-                wartPrefab,
-                wartPoints[selectedPoint].position,
-                wartPoints[selectedPoint].rotation,
-                wartPoints[selectedPoint]
-            );
+            int wartsToAdd = savedData.wartCount - savedData.activeWartPoints.Count;
+            for (int i = 0; i < wartsToAdd; i++)
+            {
+                if (availablePoints.Count == 0)
+                    break;
 
-            spawnedWarts.Add(wart);
-            availablePoints.RemoveAt(randomIndex);
+                int randomIndex = Random.Range(
+                    0, availablePoints.Count
+                );
+
+                int selectedPoint = availablePoints[randomIndex];
+                
+                savedData.activeWartPoints.Add(selectedPoint);
+                availablePoints.RemoveAt(randomIndex);
+            }
         }
-    }
+
+            foreach (int index in savedData.activeWartPoints)
+            {
+                if (index < wartPoints.Length)
+                {
+                    GameObject wart = Instantiate(
+                        wartPrefab,
+                        wartPoints[index].position,
+                        wartPoints[index].rotation,
+                        wartPoints[index]
+                    );
+
+                    spawnedWarts.Add(wart);
+                }
+            }
+        }
 
     public void Cure(double amount)
     {

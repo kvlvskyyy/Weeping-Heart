@@ -676,17 +676,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249648961204878957, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 249648961204878957, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000082
+      objectReference: {fileID: 0}
+    - target: {fileID: 249648961204878957, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000832
+      objectReference: {fileID: 0}
     - target: {fileID: 749760732627722366, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00003
       objectReference: {fileID: 0}
     - target: {fileID: 749760732627722366, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00129
+      value: 0.001008
       objectReference: {fileID: 0}
     - target: {fileID: 749760732627722366, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00096
+      value: 0.000344
       objectReference: {fileID: 0}
     - target: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: patientID
@@ -806,7 +818,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 0cbcbcfe-f612-43c2-802a-0212826ba111
-      m_Path: <Keyboard>/numpad2
+      m_Path: <Keyboard>/pageDown
       m_Interactions: 
       m_Processors: 
       m_Groups: 

@@ -55,12 +55,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7748016505235737058}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00237, y: -0.00016, z: -0}
+  m_LocalRotation: {x: -0.456054, y: 0.49264455, z: -0.50349075, w: -0.543887}
+  m_LocalPosition: {x: 0.000196, y: 0.000073, z: -0.000794}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1326341115081734000}
+  m_Father: {fileID: 3880778493465280051}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8438050999664254705
 GameObject:
@@ -508,7 +508,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6124865130931706766, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6392270937637535732}
-    - targetCorrespondingSourceObject: {fileID: 3357279883474884748, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 658689967997702607, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 249648961204878957}
     m_AddedComponents:
@@ -570,11 +570,6 @@ CapsuleCollider:
   m_Height: 0.0037334878
   m_Direction: 1
   m_Center: {x: -0.000000022510461, y: 0.0016046377, z: 0.00011485961}
---- !u!4 &1326341115081734000 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3357279883474884748, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
-  m_PrefabInstance: {fileID: 4395346607510712316}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3289670981230562571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7973576822035291401, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
@@ -648,8 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78777a2237816004488f200acabf3c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
-  infectionSeverity: 0
-  beenTreated: 0
+  patientID: 
   wartPrefab: {fileID: 919132149155446097, guid: df69e42b97628f4479b6fad1dfd889e0, type: 3}
   wartPoints:
   - {fileID: 749760732627722366}
@@ -687,6 +681,11 @@ CapsuleCollider:
 --- !u!4 &3818452103448026935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 577223292419059915, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+  m_PrefabInstance: {fileID: 4395346607510712316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3880778493465280051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 658689967997702607, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
   m_PrefabInstance: {fileID: 4395346607510712316}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6234758818191614697 stripped

@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
             if (patient.cureDay > 0 &&
                 patient.cureDay <= currentDay)
             {
+                Debug.Log($"[END DAY] Processing Cure for: {patient.patientID}");
                 patient.infectionSeverity =
                     System.Math.Max( 0, patient.infectionSeverity - patient.cureAmount );
 

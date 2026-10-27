@@ -13,6 +13,8 @@ public class PatientData
     public double cureAmount = 1;
 
     public int wartCount = 0;
+    
+    public System.Collections.Generic.List<int> activeWartPoints = new System.Collections.Generic.List<int>();
 
     public PatientData(string id)
     {

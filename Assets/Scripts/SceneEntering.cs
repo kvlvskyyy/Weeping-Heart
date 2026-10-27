@@ -6,14 +6,8 @@ public class SceneEntering : MonoBehaviour
     public PlayerMovement playerMovement;
     public string sceneToLoad;
 
-    private void Update()
+    public void EnterScene()
     {
-        if (playerMovement == null ||
-            !playerMovement.isEntering)
-            return;
-
-        playerMovement.isEntering = false;
-
         GameManager manager = GameManager.Instance;
 
         if (manager == null)
@@ -29,7 +23,9 @@ public class SceneEntering : MonoBehaviour
         }
 
         if (!manager.RegisterVisit())
+        {
             return;
+        }
 
         PlayerMovement.isInHouse = true;
         SceneManager.LoadScene(sceneToLoad);

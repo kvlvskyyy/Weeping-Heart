@@ -20,7 +20,10 @@ public class DaySystemsScript : MonoBehaviour
     private void Update()
     {
         if (!isHouseScene)
+        {
             return;
+        }
+            
 
         if (leaveHouse.WasPressedThisFrame())
         {
