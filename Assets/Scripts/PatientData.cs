@@ -15,6 +15,7 @@ public class PatientData
     public int wartCount = 0;
     
     public System.Collections.Generic.List<int> activeWartPoints = new System.Collections.Generic.List<int>();
+    public System.Collections.Generic.List<string> amputatedLimbs = new System.Collections.Generic.List<string>();
 
     public PatientData(string id)
     {

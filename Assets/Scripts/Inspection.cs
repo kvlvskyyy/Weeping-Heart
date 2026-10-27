@@ -74,9 +74,18 @@ public class Inspection : MonoBehaviour
 
                     if (amputateAction.WasPressedThisFrame())
                     {
-                        selectedBodyPart.localScale = Vector3.zero;
-                        selectedBodyPart.GetComponent<Collider>().enabled = false;
+                        PatientInfection patientInfection = currentAnchor.GetComponentInParent<PatientInfection>();
 
+                        if (patientInfection != null)
+                        {
+                            patientInfection.AmputateLimb(selectedBodyPart);
+                        }
+                        else
+                        {
+                            selectedBodyPart.localScale = Vector3.zero;
+                            selectedBodyPart.GetComponent<Collider>().enabled = false;
+                        }
+                        
                         isManipulating = false;
                         selectedBodyPart = null;
                         spotLight.gameObject.SetActive(false);
