@@ -34,15 +34,14 @@ public class DaySystemsScript : MonoBehaviour
 
         if (manager == null)
         {
-            Debug.LogError("GameManager is missing!");
+            Debug.LogError("no game manager");
             return;
         }
 
         Debug.Log("Left house");
-        Debug.Log(manager.patientsVisitedToday);
+        Debug.Log(manager.patientsVisited);
 
-        if (manager.patientsVisitedToday >=
-            manager.maxPatientsPerDay)
+        if (manager.patientsVisited >= manager.maxPatients)
         {
             manager.EndDay();
         }

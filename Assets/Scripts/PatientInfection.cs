@@ -14,17 +14,11 @@ public class PatientInfection : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance == null)
-        {
-            Debug.LogError("GameManager is missing!");
-            return;
-        }
-
         savedData = GameManager.Instance.GetPatientData(patientID);
 
         if (savedData == null)
         {
-            Debug.LogError("Patient data not found: " + patientID);
+            Debug.LogError("problem w " + patientID);
             return;
         }
 
@@ -101,7 +95,6 @@ public class PatientInfection : MonoBehaviour
         savedData.cureAmount = amount;
         savedData.beenTreated = true;
 
-        savedData.cureDay =
-            GameManager.Instance.currentDay + 1;
+        savedData.cureDay = GameManager.Instance.currentDay + 1;
     }
 }

@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public List<PatientData> allPatients = new List<PatientData>();
 
     public int currentDay = 1;
-    public int patientsVisitedToday = 0;
-    public int maxPatientsPerDay = 4;
+    public int patientsVisited = 0;
+    public int maxPatients = 4;
 
     public int syringes = 0;
 
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public bool CanVisitPatient()
     {
-        return patientsVisitedToday < maxPatientsPerDay;
+        return patientsVisited < maxPatients;
     }
 
     public bool RegisterVisit()
@@ -50,16 +50,16 @@ public class GameManager : MonoBehaviour
         if (!CanVisitPatient())
             return false;
 
-        patientsVisitedToday++;
+        patientsVisited++;
         return true;
     }
 
     public void EndDay()
     {
         currentDay++;
-        patientsVisitedToday = 0;
+        patientsVisited = 0;
 
-        Debug.Log("It's day " + currentDay);
+        Debug.Log("Day " + currentDay);
 
         ProgressAllPatients();
     }
@@ -74,10 +74,7 @@ public class GameManager : MonoBehaviour
                 patient.cureDay <= currentDay)
             {
                 patient.infectionSeverity =
-                    System.Math.Max(
-                        0,
-                        patient.infectionSeverity - patient.cureAmount
-                    );
+                    System.Math.Max( 0, patient.infectionSeverity - patient.cureAmount );
 
                 patient.cureDay = 0;
                 patient.beenTreated = false;
@@ -110,8 +107,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        PatientInfection[] activePatients =
-            FindObjectsByType<PatientInfection>(FindObjectsSortMode.None);
+        PatientInfection[] activePatients = FindObjectsByType<PatientInfection>();
 
         foreach (PatientInfection patient in activePatients)
         {
