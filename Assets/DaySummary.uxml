@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:Label text="Day Summary" style="-unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Cursive%20Option.ttf?fileID=12800000&amp;guid=30506693359a6454aa03661f8999522d&amp;type=3#Cursive Option&quot;); font-size: 75px; color: rgb(255, 255, 255);"/>
+        <ui:Label text="Villagers Alive:" style="color: rgb(255, 255, 255);"/>
+        <ui:Label text="Money earned:" style="color: rgb(245, 245, 245);"/>
+    </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0); background-size: 100% 100%; position: absolute; height: 335px; width: 1173px; bottom: 0;">
+        <ui:Button text="Continue" name="Continue" style="position: relative; top: auto; left: auto; bottom: auto; background-color: rgba(88, 88, 88, 0); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Cursive%20Option.ttf?fileID=12800000&amp;guid=30506693359a6454aa03661f8999522d&amp;type=3#Cursive Option&quot;); color: rgb(255, 255, 255); font-size: 100px; -unity-text-align: middle-center; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;"/>
+        <ui:Button text="Main menu" name="MainMenu" style="position: relative; top: auto; left: auto; bottom: auto; background-color: rgba(88, 88, 88, 0); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Cursive%20Option.ttf?fileID=12800000&amp;guid=30506693359a6454aa03661f8999522d&amp;type=3#Cursive Option&quot;); color: rgb(255, 255, 255); font-size: 100px; -unity-text-align: middle-center; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;"/>
+    </ui:VisualElement>
+</ui:UXML>
