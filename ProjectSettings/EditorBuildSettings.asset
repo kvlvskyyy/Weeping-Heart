@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FarmerHouse.unity
     guid: 3e7a0249d0bccf4469bfe106dd1cc0b1
+  - enabled: 1
+    path: Assets/Scenes/ShopMenu.unity
+    guid: 3eb362d851bfb224fbf379a9d03bdfcc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
