@@ -136,5 +136,26 @@ public class PatientInfection : MonoBehaviour
             savedData.amputatedLimbs.Add(limb.name);
             Debug.Log($"[Amputation] saved limb {limb.name} was removed");
         }
+        
+        for (int i = spawnedWarts.Count - 1; i >= 0; i--)
+        {
+            GameObject wart = spawnedWarts[i];
+
+            if (wart.transform.IsChildOf(limb))
+            {
+                for (int j = 0; j < wartPoints.Length; j++)
+                {
+                    if (wart.transform.parent == wartPoints[j])
+                    {
+                        savedData.activeWartPoints.Remove(j);
+                        savedData.wartCount = Mathf.Max(0, savedData.wartCount - 1);
+                        break;
+                    }
+                }
+
+                Destroy(wart);
+                spawnedWarts.RemoveAt(i);
+            }
+        }
     }
 }
