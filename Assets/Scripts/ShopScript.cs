@@ -26,6 +26,7 @@ public class ShopScript : MonoBehaviour
     void BuySyringe()
     {
         GameManager.Instance.AddSyringe(1);
+        Debug.Log("Syring");
     }
     void ToVillage()
     {

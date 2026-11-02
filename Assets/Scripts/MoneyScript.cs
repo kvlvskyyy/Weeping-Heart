@@ -2,6 +2,6 @@ using UnityEngine;
 
 public class MoneyScript : MonoBehaviour
 {
-    public int moneyAmount = 0;
-
+    public static int moneyAmount = 0;
+    public static int moneyGained = 240;
 }
