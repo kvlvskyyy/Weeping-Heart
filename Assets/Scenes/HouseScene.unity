@@ -786,7 +786,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 0cbcbcfe-f612-43c2-802a-0212826ba111
-      m_Path: <Keyboard>/pageDown
+      m_Path: <Keyboard>/minus
       m_Interactions: 
       m_Processors: 
       m_Groups: 
