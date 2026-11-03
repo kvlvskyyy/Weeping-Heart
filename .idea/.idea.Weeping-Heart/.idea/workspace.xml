@@ -13,8 +13,18 @@
     <list default="true" id="91b5bd36-d91b-4712-8aa8-6e821b1cdbec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Weeping-Heart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Weeping-Heart/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DaySummary.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DaySummary.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DaySummary.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DaySummary.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ShopMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ShopMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DaySummary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DaySummary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DaySystemsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DaySystemsScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoneyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MoneyScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShopScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShopScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI Docs/MainMenu.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI Docs/MainMenu.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI Docs/ShopMenu.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI Docs/ShopMenu.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

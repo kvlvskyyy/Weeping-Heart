@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Day " + currentDay);
 
         ProgressAllPatients();
-        SceneManager.LoadScene("DaySummary");
+        SceneManager.LoadScene("DaySummary"); 
     }
 
     public void ProgressAllPatients()

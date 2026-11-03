@@ -8,9 +8,19 @@ public class ShopScript : MonoBehaviour
     private Button bandageBuyButton;
     private Button syringeBuyButton;
     private Button leaveShopButton;
+    
+    private Label syringePriceLabel;
+    private Label bandagePriceLabel;
+
+    public int syringePrice = 0;
+    public int bandagePrice = 0;
 
     void Start()
     {
+        syringePriceLabel = shopMenu.rootVisualElement.Q<Label>("SyringePrice");
+        syringePriceLabel.text = syringePrice.ToString();
+        bandagePriceLabel = shopMenu.rootVisualElement.Q<Label>("BandagePrice");
+        bandagePriceLabel.text = bandagePrice.ToString();
         bandageBuyButton = shopMenu.rootVisualElement.Q<Button>("BandageBuy");
         bandageBuyButton.clicked += BuyBandage;
         syringeBuyButton = shopMenu.rootVisualElement.Q<Button>("SyringeBuy");

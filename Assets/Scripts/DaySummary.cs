@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using Cursor = UnityEngine.Cursor;
+
 public class DaySummary : MonoBehaviour
 {
     private UIDocument uiDocument;
     
     private Label villagersAliveText;
     private Label moneyEarnedText;
+
+    private Button continueButton;
+    private Button mainMenuButton;
 
     private void Awake()
     {
@@ -19,26 +25,40 @@ public class DaySummary : MonoBehaviour
 
         villagersAliveText = root.Q<Label>("Villagers");
         moneyEarnedText = root.Q<Label>("Money");
+        continueButton = root.Q<Button>("Continue");
+        mainMenuButton = root.Q<Button>("MainMenu");
+        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         
         UpdateSummaryPanel();
+
+        continueButton.clicked += ContinueClicked;
+        mainMenuButton.clicked += MainMenuClicked;
     }
 
     public void UpdateSummaryPanel()
     {
         MoneyScript moneyScript = MoneyScript.Instance;
-        GameManager manager = GameManager.Instance;
-        if (moneyScript == null || manager == null) return;
-
-        int aliveCount = 0;
-        foreach (PatientData patient in manager.allPatients)
+        if (moneyScript == null)
         {
-            if (!patient.lost)
-            {
-                aliveCount++;
-            }
+            Debug.Log("No money script found");
+            return;
         }
+        
+        villagersAliveText.text = moneyScript.aliveCount.ToString();
+        moneyEarnedText.text = moneyScript.moneyEarned.ToString();
+    }
 
-        villagersAliveText.text = aliveCount.ToString();
-        moneyEarnedText.text = moneyScript.moneyAmount.ToString();
+    void ContinueClicked()
+    {
+        Debug.Log("Continue clicked");
+        SceneManager.LoadScene("Village");
+    }
+
+    void MainMenuClicked()
+    {
+        Debug.Log("MainMenu clicked");
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 156947832}
   - component: {fileID: 156947831}
-  - component: {fileID: 156947833}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -169,19 +168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156947833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156947830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124a8c0a228dd8548add7bac37edd8ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoneyScript
-  moneyAmount: 240
 --- !u!1 &1160016929
 GameObject:
   m_ObjectHideFlags: 0
