@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 899687280}
   - component: {fileID: 899687281}
   - component: {fileID: 899687282}
+  - component: {fileID: 899687283}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -188,7 +189,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopScript
   shopMenu: {fileID: 899687281}
-  syringeCount: 0
+--- !u!114 &899687283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899687279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124a8c0a228dd8548add7bac37edd8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyScript
+  moneyAmount: 240
 --- !u!1 &1085759985
 GameObject:
   m_ObjectHideFlags: 0
