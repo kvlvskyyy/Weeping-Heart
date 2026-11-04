@@ -12,7 +12,7 @@ public class DaySummary : MonoBehaviour
     private Label moneyEarnedText;
 
     private Button continueButton;
-    private Button mainMenuButton;
+    private Button clinicButton;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class DaySummary : MonoBehaviour
         villagersAliveText = root.Q<Label>("Villagers");
         moneyEarnedText = root.Q<Label>("Money");
         continueButton = root.Q<Button>("Continue");
-        mainMenuButton = root.Q<Button>("MainMenu");
+        clinicButton = root.Q<Button>("Clinic");
         
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -34,7 +34,7 @@ public class DaySummary : MonoBehaviour
         UpdateSummaryPanel();
 
         continueButton.clicked += ContinueClicked;
-        mainMenuButton.clicked += MainMenuClicked;
+        clinicButton.clicked += ClinicClicked;
     }
 
     public void UpdateSummaryPanel()
@@ -60,5 +60,11 @@ public class DaySummary : MonoBehaviour
     {
         Debug.Log("MainMenu clicked");
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void ClinicClicked()
+    {
+        Debug.Log("Clinic clicked");
+        SceneManager.LoadScene("ShopMenu");
     }
 }

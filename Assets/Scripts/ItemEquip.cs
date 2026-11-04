@@ -8,6 +8,8 @@ public class ItemEquip : MonoBehaviour
     public InputAction addSyringeAction;
     public InputAction equipSyringeAction;
     public InputAction injectAction;
+    
+    public LayerMask injectableLayer;
 
     public float syringeCount;
 
@@ -31,7 +33,7 @@ public class ItemEquip : MonoBehaviour
     {
         if (addSyringeAction.WasPressedThisFrame())
         {
-            GameManager.Instance.AddSyringe(Mathf.RoundToInt(syringeCount));
+            GameManager.Instance.AddItem(Mathf.RoundToInt(syringeCount), "Syringe");
         }
 
         if (equipSyringeAction.WasPressedThisFrame())
@@ -65,13 +67,13 @@ public class ItemEquip : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (!Physics.Raycast(ray, out hit))
+        if (!Physics.Raycast(ray, out hit, 5f, injectableLayer))
         {
             Debug.Log("What the fuck are you aiming at");
             return;
         }
-        PatientInfection patient = hit.collider.GetComponentInParent<PatientInfection>();
-        if (patient == null)
+        
+        if (!hit.collider.TryGetComponent<PatientInfection>(out PatientInfection patient))
         {
             Debug.Log("That's not the patient dumb fuck");
             return;

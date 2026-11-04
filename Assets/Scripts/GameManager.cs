@@ -144,8 +144,20 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    public void AddSyringe(int amount)
+    public void AddItem(int amount, string itemName)
     {
-        syringes += amount;
+        switch (itemName)
+        {
+            case "Syringe":
+                Debug.Log("Adding Syringe");
+                syringes+=amount;
+                break;
+            case "Bandage":
+                Debug.Log("Adding Bandage");
+                break;
+            default:
+                Debug.Log("Item doesn't exist");
+                break;
+        }
     }
 }

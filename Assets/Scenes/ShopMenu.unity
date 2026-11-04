@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124a8c0a228dd8548add7bac37edd8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoneyScript
+  moneyAmount: 180
   moneyEarned: 0
   aliveCount: 0
   moneyPerVillager: 10

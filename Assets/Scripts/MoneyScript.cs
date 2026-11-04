@@ -3,7 +3,7 @@ using UnityEngine;
 public class MoneyScript : MonoBehaviour
 {
     public static MoneyScript Instance;
-    public int moneyAmount { get; set; } = 0;
+    public int moneyAmount = 0;
     public int moneyEarned = 0;
     public int aliveCount = 0;
     public int moneyPerVillager = 10;
@@ -39,6 +39,10 @@ public class MoneyScript : MonoBehaviour
             
         moneyEarned = moneyPerVillager * aliveCount;
         moneyAmount += moneyEarned;
+    }
+    public void SubtractMoneyAmount(int amount)
+    {
+        moneyAmount -= amount;
     }
     
 }
