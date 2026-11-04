@@ -1,0 +1,64 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using Cursor = UnityEngine.Cursor;
+
+public class DaySummary : MonoBehaviour
+{
+    private UIDocument uiDocument;
+    
+    private Label villagersAliveText;
+    private Label moneyEarnedText;
+
+    private Button continueButton;
+    private Button mainMenuButton;
+
+    private void Awake()
+    {
+        uiDocument = GetComponent<UIDocument>();
+    }
+
+    private void OnEnable()
+    {
+        VisualElement root = uiDocument.rootVisualElement;
+
+        villagersAliveText = root.Q<Label>("Villagers");
+        moneyEarnedText = root.Q<Label>("Money");
+        continueButton = root.Q<Button>("Continue");
+        mainMenuButton = root.Q<Button>("MainMenu");
+        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
+        UpdateSummaryPanel();
+
+        continueButton.clicked += ContinueClicked;
+        mainMenuButton.clicked += MainMenuClicked;
+    }
+
+    public void UpdateSummaryPanel()
+    {
+        MoneyScript moneyScript = MoneyScript.Instance;
+        if (moneyScript == null)
+        {
+            Debug.Log("No money script found");
+            return;
+        }
+        
+        villagersAliveText.text = moneyScript.aliveCount.ToString();
+        moneyEarnedText.text = moneyScript.moneyEarned.ToString();
+    }
+
+    void ContinueClicked()
+    {
+        Debug.Log("Continue clicked");
+        SceneManager.LoadScene("Village");
+    }
+
+    void MainMenuClicked()
+    {
+        Debug.Log("MainMenu clicked");
+        SceneManager.LoadScene("MainMenu");
+    }
+}

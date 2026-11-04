@@ -177,8 +177,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160016930}
-  - component: {fileID: 1160016932}
   - component: {fileID: 1160016933}
+  - component: {fileID: 1160016932}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged

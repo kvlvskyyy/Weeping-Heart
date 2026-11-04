@@ -34,6 +34,7 @@ public class DaySystemsScript : MonoBehaviour
     private void LeaveHouse()
     {
         GameManager manager = GameManager.Instance;
+        MoneyScript moneyScript = MoneyScript.Instance;
 
         if (manager == null)
         {
@@ -46,9 +47,13 @@ public class DaySystemsScript : MonoBehaviour
 
         if (manager.patientsVisited >= manager.maxPatients)
         {
+            moneyScript.UpdateMoneyAmount();
             manager.EndDay();
         }
+        else
+        {
+            SceneManager.LoadScene(villageSceneName);
+        }
 
-        SceneManager.LoadScene(villageSceneName);
     }
 }

@@ -570,6 +570,11 @@ CapsuleCollider:
   m_Height: 0.0037334878
   m_Direction: 1
   m_Center: {x: -0.000000022510461, y: 0.0016046377, z: 0.00011485961}
+--- !u!4 &2148869033510753907 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6832741891313092209, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+  m_PrefabInstance: {fileID: 4395346607510712316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3289670981230562571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7973576822035291401, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
@@ -649,6 +654,13 @@ MonoBehaviour:
   - {fileID: 749760732627722366}
   - {fileID: 6392270937637535732}
   - {fileID: 249648961204878957}
+  amputableLimbs:
+  - {fileID: 8229367113741455567}
+  - {fileID: 2148869033510753907}
+  - {fileID: 336812621422608673}
+  - {fileID: 7334769566345486503}
+  - {fileID: 7494143784842212466}
+  - {fileID: 7162585152430712703}
   spawnedWarts: []
 --- !u!1 &3488804577153418959 stripped
 GameObject:
@@ -715,6 +727,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4090233603212938926, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+--- !u!4 &7162585152430712703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6888806815857526915, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+  m_PrefabInstance: {fileID: 4395346607510712316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7334769566345486503 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2795259288829128869, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+  m_PrefabInstance: {fileID: 4395346607510712316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7363627281246983641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6543646198283041317, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
@@ -776,3 +798,8 @@ CapsuleCollider:
   m_Height: 0.0038594455
   m_Direction: 1
   m_Center: {x: 0.0000000021312532, y: 0.0011184424, z: 0.00019022854}
+--- !u!4 &8229367113741455567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3545461305216090317, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+  m_PrefabInstance: {fileID: 4395346607510712316}
+  m_PrefabAsset: {fileID: 0}

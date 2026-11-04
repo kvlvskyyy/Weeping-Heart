@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Day " + currentDay);
 
         ProgressAllPatients();
+        SceneManager.LoadScene("DaySummary"); 
     }
 
     public void ProgressAllPatients()
