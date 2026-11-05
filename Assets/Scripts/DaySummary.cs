@@ -10,6 +10,8 @@ public class DaySummary : MonoBehaviour
     
     private Label villagersAliveText;
     private Label moneyEarnedText;
+    private Label dayNumberText;
+
 
     private Button continueButton;
     private Button clinicButton;
@@ -23,6 +25,7 @@ public class DaySummary : MonoBehaviour
     {
         VisualElement root = uiDocument.rootVisualElement;
 
+        dayNumberText = root.Q<Label>("Day");
         villagersAliveText = root.Q<Label>("Villagers");
         moneyEarnedText = root.Q<Label>("Money");
         continueButton = root.Q<Button>("Continue");
@@ -40,12 +43,23 @@ public class DaySummary : MonoBehaviour
     public void UpdateSummaryPanel()
     {
         MoneyScript moneyScript = MoneyScript.Instance;
+        GameManager manager = GameManager.Instance;
+        
         if (moneyScript == null)
         {
             Debug.Log("No money script found");
             return;
         }
+
+        if (manager == null)
+        {
+            Debug.Log("No gameManager script found");
+            return;
+        }
+
+        int finishedDay = manager.currentDay - 1;
         
+        dayNumberText.text = finishedDay.ToString();
         villagersAliveText.text = moneyScript.aliveCount.ToString();
         moneyEarnedText.text = moneyScript.moneyEarned.ToString();
     }

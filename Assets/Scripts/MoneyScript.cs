@@ -29,6 +29,7 @@ public class MoneyScript : MonoBehaviour
 
     public void UpdateMoneyAmount()
     {
+        aliveCount = 0;
         foreach (PatientData patient in manager.allPatients)
         {
             if (!patient.lost)
