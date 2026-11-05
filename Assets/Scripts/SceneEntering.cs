@@ -22,10 +22,7 @@ public class SceneEntering : MonoBehaviour
             return;
         }
 
-        if (!manager.RegisterVisit())
-        {
-            return;
-        }
+        if (!manager.RegisterVisit()) return;
 
         PlayerMovement.isInHouse = true;
         SceneManager.LoadScene(sceneToLoad);

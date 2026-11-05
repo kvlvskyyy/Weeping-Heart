@@ -8,6 +8,9 @@ public class Inspection : MonoBehaviour
     public InputAction leaveInspectionAction;
     public InputAction amputateAction;
     
+    public AmputationMinigame sawMinigame;
+    
+    
     public bool isInspecting = false;
     
     public Transform currentAnchor;
@@ -43,11 +46,16 @@ public class Inspection : MonoBehaviour
     
     void Start()
     {
-        
+        if (sawMinigame == null)
+        {
+            sawMinigame = GetComponent<AmputationMinigame>();
+        }
     }
 
     void Update()
     {
+        if (sawMinigame != null && sawMinigame.isSawing) return;
+        
         if (PlayerMovement.isInHouse)
         {
             if (isInspecting == true)
@@ -74,21 +82,34 @@ public class Inspection : MonoBehaviour
 
                     if (amputateAction.WasPressedThisFrame())
                     {
-                        PatientInfection patientInfection = currentAnchor.GetComponentInParent<PatientInfection>();
+                        Transform limbToCut = selectedBodyPart;
+                        Transform limbSawAnchor = FindSawAnchor(limbToCut);
 
-                        if (patientInfection != null)
+                        limbToCut.localRotation = initialRotation;
+
+                        if (limbSawAnchor == null)
                         {
-                            patientInfection.AmputateLimb(selectedBodyPart);
+                            Debug.LogWarning("No Saw anchor found on " + limbToCut.name);
                         }
+
+                        if (sawMinigame == null)
+                        {
+                            Debug.LogWarning("No Saw minigame found");
+                        }
+
+                        if (limbSawAnchor != null && sawMinigame != null)
+                        {
+                            sawMinigame.StartSawing(limbSawAnchor, () =>
+                            {
+                                ExecuteAmputation(limbToCut);
+                            });
+                        }
+
                         else
                         {
-                            selectedBodyPart.localScale = Vector3.zero;
-                            selectedBodyPart.GetComponent<Collider>().enabled = false;
+                            Debug.LogWarning("No Saw anchor found on " + limbToCut.name);
+                            ExecuteAmputation(limbToCut);
                         }
-                        
-                        isManipulating = false;
-                        selectedBodyPart = null;
-                        spotLight.gameObject.SetActive(false);
                     }
                 }
                 else
@@ -140,6 +161,42 @@ public class Inspection : MonoBehaviour
                 }
             }
         }
+    }
+
+    private Transform FindSawAnchor(Transform limb)
+    {
+        int sawAnchorLayer = LayerMask.NameToLayer("SawAnchor");
+        
+        Transform[] children = limb.GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in children)
+        {
+            if (child.gameObject.layer == sawAnchorLayer)
+            {
+                return child;
+            }
+        }
+
+        return null;
+    }
+
+    private void ExecuteAmputation(Transform limbToCut)
+    {
+        PatientInfection patientInfection = currentAnchor.GetComponentInParent<PatientInfection>();
+
+                        
+        if (patientInfection != null)
+        {
+            patientInfection.AmputateLimb(limbToCut);
+        }
+        else
+        {
+            selectedBodyPart.localScale = Vector3.zero;
+            selectedBodyPart.GetComponent<Collider>().enabled = false;
+        }
+                        
+        isManipulating = false;
+        selectedBodyPart = null;
+        spotLight.gameObject.SetActive(false);
     }
 }
 

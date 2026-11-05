@@ -67,24 +67,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (sprintAction.IsPressed() && currentStamina > 0 && inputVector != Vector2.zero && !isResting)
-        {
-            isSprinting = true;
-        }
-        else
-        {
-            isSprinting = false;
-        }
+        if (sprintAction.IsPressed() && currentStamina > 0 && inputVector != Vector2.zero && !isResting) isSprinting = true;
+        
+        else isSprinting = false;
 
-        if (isSprinting)
-        { 
-            currentStamina -= Time.deltaTime * drainRate;
-        }
-        else
-        {
-            currentStamina += Time.deltaTime * regenRate;
-            
-        }
+        if (isSprinting) currentStamina -= Time.deltaTime * drainRate;
+        
+        else currentStamina += Time.deltaTime * regenRate;
+        
         currentStamina = Mathf.Clamp(currentStamina, 0, baseStamina);
         
         if (currentStamina == 0)
