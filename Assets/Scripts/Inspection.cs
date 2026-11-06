@@ -104,12 +104,6 @@ public class Inspection : MonoBehaviour
                                 ExecuteAmputation(limbToCut);
                             });
                         }
-
-                        else
-                        {
-                            Debug.LogWarning("No Saw anchor found on " + limbToCut.name);
-                            ExecuteAmputation(limbToCut);
-                        }
                     }
                 }
                 else
