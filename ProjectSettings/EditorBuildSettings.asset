@@ -23,5 +23,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DaySummary.unity
     guid: 11c84b2a01f074fd5a23672416a77927
+  - enabled: 1
+    path: Assets/Scenes/BakerHouse.unity
+    guid: ac78edb08a44b5a4da67ca378efd0b2f
+  - enabled: 1
+    path: Assets/Scenes/BotanistHouse.unity
+    guid: a6185ffa046008f49aae2513113bc6e6
+  - enabled: 1
+    path: Assets/Scenes/ElderHouse.unity
+    guid: c5d6ac523ea0671459927c780ed54237
+  - enabled: 0
+    path: Assets/Scenes/InfectionScene.unity
+    guid: c43d48b5f4a231647be23be4a1586e14
+  - enabled: 1
+    path: Assets/Scenes/MillerHouse.unity
+    guid: b6bb6fa865ec20a49a1f1ff86a0ebceb
+  - enabled: 1
+    path: Assets/Scenes/PhilosopherHouse.unity
+    guid: 19edcfc9a5b6e8b438bb8f683081770e
+  - enabled: 1
+    path: Assets/Scenes/WeaverHouse.unity
+    guid: e3395676add845d4ebe57dca2095860d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
