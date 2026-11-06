@@ -7836,7 +7836,6 @@ MonoBehaviour:
   inspectionScript: {fileID: 301050426932539203}
   isSprinting: 0
   isResting: 0
-  isInHouse: 0
   isEntering: 0
   orientation: {fileID: 1803110674499463886}
   rb: {fileID: 8328188516506970749}
@@ -7981,7 +7980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0138f9959f4335b4db96bce5c701f587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEquip
-  inventory: {fileID: 4197463400359892528}
   syringe: {fileID: 7722883310865104843}
   addSyringeAction:
     m_Name: Add Syringe
@@ -8037,6 +8035,9 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+  injectableLayer:
+    serializedVersion: 2
+    m_Bits: 64
   syringeCount: 1
 --- !u!114 &4197463400359892528
 MonoBehaviour:
