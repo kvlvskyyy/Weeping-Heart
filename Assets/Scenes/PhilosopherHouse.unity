@@ -676,6 +676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 57316965411540402, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 249648961204878957, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000006
@@ -712,6 +716,10 @@ PrefabInstance:
       propertyPath: DaySystemsScript
       value: 
       objectReference: {fileID: 1136387204}
+    - target: {fileID: 2137997386706207000, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: patientID
+      value: patient_07
+      objectReference: {fileID: 0}
     - target: {fileID: 3141966792738366319, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.7552643

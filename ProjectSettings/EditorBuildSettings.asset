@@ -44,5 +44,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WeaverHouse.unity
     guid: e3395676add845d4ebe57dca2095860d
+  - enabled: 1
+    path: Assets/Scenes/BlacksmithHouse.unity
+    guid: dcb4b55ef180bc441b61559ae07ff995
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

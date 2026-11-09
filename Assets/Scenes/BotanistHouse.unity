@@ -644,6 +644,10 @@ PrefabInstance:
       propertyPath: DaySystemsScript
       value: 
       objectReference: {fileID: 1454454205}
+    - target: {fileID: 2137997386706207000, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
+      propertyPath: patientID
+      value: patient_02
+      objectReference: {fileID: 0}
     - target: {fileID: 2424660733712958612, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2447

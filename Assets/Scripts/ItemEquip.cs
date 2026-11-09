@@ -59,28 +59,33 @@ public class ItemEquip : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-
         if (!Physics.Raycast(ray, out hit, 5f, injectableLayer))
         {
-            Debug.Log("What the fuck are you aiming at");
+            Debug.Log("try again dummy");
             return;
         }
-        
-        if (!hit.collider.TryGetComponent<PatientInfection>(out PatientInfection patient))
+        Debug.Log("Hit object: " + hit.collider.name);
+
+        PatientInfection patient = hit.collider.GetComponentInParent<PatientInfection>();
+        if (patient == null)
         {
-            Debug.Log("That's not the patient dumb fuck");
+            Debug.Log("No ptinfect found");
             return;
         }
+
         if (!GameManager.Instance.UseSyringe())
         {
-            Debug.Log("Broke boy");
+            Debug.Log("nope");
             return;
         }
 
         patient.Cure(1.0);
-        Debug.Log($"[SYRINGE] Injected actual ID: {patient.patientID}");
+
+        Debug.Log($"[SYRINGE] Injected patient ID: {patient.patientID}");
+
         syringe.SetActive(false);
         syringeEquipped = false;
+
         Debug.Log("Injected " + patient.gameObject.name);
     }
 }

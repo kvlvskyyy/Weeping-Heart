@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        for (int i = 1; i <= 8; i++)
+        for (int i = 1; i <= 9; i++)
         {
             string id = "patient_" + i.ToString("00");
 
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
             patient.infectionSeverity = System.Math.Min(
                 4,
-                patient.infectionSeverity + 0.5
+                patient.infectionSeverity + 0.75
             );
 
             if (patient.infectionSeverity >= 1 &&
