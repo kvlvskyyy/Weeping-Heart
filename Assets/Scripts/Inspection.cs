@@ -161,15 +161,29 @@ public class Inspection : MonoBehaviour
     {
         int sawAnchorLayer = LayerMask.NameToLayer("SawAnchor");
         
-        Transform[] children = limb.GetComponentsInChildren<Transform>(true);
-        foreach (Transform child in children)
+        foreach (Transform directChild in limb)
         {
-            if (child.gameObject.layer == sawAnchorLayer)
+            if (directChild.gameObject.layer == sawAnchorLayer || directChild.name.Contains("SawAnchor"))
             {
-                return child;
+                return directChild;
+            }
+        }
+        
+        foreach (Transform directChild in limb)
+        {
+            if (((1 << directChild.gameObject.layer) & inspectableLayer) != 0)
+                continue;
+
+            foreach (Transform grandChild in directChild)
+            {
+                if (grandChild.gameObject.layer == sawAnchorLayer || grandChild.name.Contains("SawAnchor"))
+                {
+                    return grandChild;
+                }
             }
         }
 
+        Debug.LogWarning("No direct SawAnchor found on " + limb.name);
         return null;
     }
 

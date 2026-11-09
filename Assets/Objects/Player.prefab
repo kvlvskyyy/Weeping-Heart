@@ -7940,11 +7940,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AmputationMinigame
   currentSawModel: {fileID: 0}
   currentSawVisuals: {fileID: 0}
-  strokeDistance: 0.02
-  sinkDepth: 0.01
-  mouseSensitivity: 0.002
+  strokeDistance: 0.002
+  sinkDepth: 0.02
+  mouseSensitivity: 0.0001
   cutSpeed: 0.4
-  invertDepth: 0
+  invertDepth: 1
   strokeAxis: 2
   depthAxis: 1
   isSawing: 0

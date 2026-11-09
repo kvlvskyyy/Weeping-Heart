@@ -79,11 +79,12 @@ public class AmputationMinigame : MonoBehaviour
         if (actualMove > 0.0001f)
         {
             cutProgress += actualMove * cutSpeed;
-            Camera.main.fieldOfView = Mathf.Lerp(60f, 50f, cutProgress);
+            Debug.Log(cutProgress);
+            Camera.main.fieldOfView = Mathf.Lerp(90f, 50f, cutProgress);
         }
         
         float targetDepth = invertDepth ? sinkDepth : -sinkDepth;
-        float currentDepth = Mathf.Lerp(0f, -sinkDepth, cutProgress);
+        float currentDepth = Mathf.Lerp(0f, targetDepth, cutProgress);
         
         Vector3 offset = Vector3.zero;
         offset = SetAxisValue(offset, strokeAxis, currentStrokePos);
@@ -91,7 +92,7 @@ public class AmputationMinigame : MonoBehaviour
         
         currentSawModel.localPosition = initialSawLocalPos + offset;
         
-        if (cutProgress >= 1f)
+        if (cutProgress >= 0.1f)
         {
             CompleteAmputation();
         }
