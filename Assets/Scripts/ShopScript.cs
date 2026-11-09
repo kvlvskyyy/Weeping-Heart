@@ -50,10 +50,7 @@ public class ShopScript : MonoBehaviour
             Debug.Log($"Added Item " + itemName);
         }
 
-        else
-        {
-            Debug.Log("Not enough money");
-        }
+        else Debug.Log("Not enough money");
         
         
     }

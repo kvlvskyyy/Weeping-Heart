@@ -7788,6 +7788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5750555990703346923}
   - component: {fileID: 1076365269179651208}
+  - component: {fileID: 8941892274823026819}
   - component: {fileID: 5896763085031648597}
   - component: {fileID: 7661169915121275243}
   - component: {fileID: 4197463400359892528}
@@ -7925,6 +7926,28 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+--- !u!114 &8941892274823026819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916074081962509328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be27a8192bac6874ba0459ab439a9e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmputationMinigame
+  currentSawModel: {fileID: 0}
+  currentSawVisuals: {fileID: 0}
+  strokeDistance: 0.002
+  sinkDepth: 0.02
+  mouseSensitivity: 0.0001
+  cutSpeed: 0.4
+  invertDepth: 1
+  strokeAxis: 2
+  depthAxis: 1
+  isSawing: 0
 --- !u!114 &5896763085031648597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7940,6 +7963,7 @@ MonoBehaviour:
   playerBody: {fileID: 4103835028498242169}
   head: {fileID: 6451176709229631238}
   inspectionScript: {fileID: 301050426932539203}
+  sawingMinigame: {fileID: 8941892274823026819}
   lanternAnchor: {fileID: 27506967968348973}
   lanternAction:
     m_Name: Lantern
@@ -8037,7 +8061,7 @@ MonoBehaviour:
     m_Priority: 0
   injectableLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   syringeCount: 1
 --- !u!114 &4197463400359892528
 MonoBehaviour:
@@ -10853,6 +10877,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+  sawMinigame: {fileID: 8941892274823026819}
   isInspecting: 0
   currentAnchor: {fileID: 0}
   spotLight: {fileID: 2568702481928536060}
