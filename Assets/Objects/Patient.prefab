@@ -890,12 +890,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 249648961204878957}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1735926833276314583}
     - targetCorrespondingSourceObject: {fileID: 7672225490130652437, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 57316965411540402}
+    - targetCorrespondingSourceObject: {fileID: 7672225490130652437, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2137997386706207000}
     - targetCorrespondingSourceObject: {fileID: 1342948525764391870, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6139069789364303570}
@@ -1009,37 +1009,6 @@ CapsuleCollider:
   m_Height: 0.0042662267
   m_Direction: 1
   m_Center: {x: 0.000000001823991, y: 0.0015648344, z: 0.00018392362}
---- !u!1 &3476217759038821037 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
-  m_PrefabInstance: {fileID: 4395346607510712316}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1735926833276314583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476217759038821037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78777a2237816004488f200acabf3c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
-  patientID: 
-  wartPrefab: {fileID: 919132149155446097, guid: df69e42b97628f4479b6fad1dfd889e0, type: 3}
-  wartPoints:
-  - {fileID: 749760732627722366}
-  - {fileID: 6392270937637535732}
-  - {fileID: 249648961204878957}
-  amputableLimbs:
-  - {fileID: 8229367113741455567}
-  - {fileID: 2148869033510753907}
-  - {fileID: 336812621422608673}
-  - {fileID: 7334769566345486503}
-  - {fileID: 7494143784842212466}
-  - {fileID: 7162585152430712703}
-  spawnedWarts: []
 --- !u!1 &3488804577153418959 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 906860925323602227, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
@@ -1105,6 +1074,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4090233603212938926, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}
+--- !u!114 &2137997386706207000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234758818191614697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78777a2237816004488f200acabf3c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
+  patientID: 
+  wartPrefab: {fileID: 919132149155446097, guid: df69e42b97628f4479b6fad1dfd889e0, type: 3}
+  wartPoints:
+  - {fileID: 749760732627722366}
+  - {fileID: 6392270937637535732}
+  - {fileID: 249648961204878957}
+  amputableLimbs:
+  - {fileID: 8229367113741455567}
+  - {fileID: 2148869033510753907}
+  - {fileID: 336812621422608673}
+  - {fileID: 7334769566345486503}
+  - {fileID: 7494143784842212466}
+  - {fileID: 7162585152430712703}
+  spawnedWarts: []
 --- !u!4 &7162585152430712703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6888806815857526915, guid: aa3c3dece91875d4399553d19dcf1b90, type: 3}

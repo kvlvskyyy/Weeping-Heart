@@ -2,7 +2,7 @@
 - Project name: Weeping-Heart
 - Unity version: Unity 6000.6.3f1
 - Active game object:
-  - Name: upper_arm.L
-  - Tag: BodyPart
-  - Layer: BodyPart
+  - Name: Patient
+  - Tag: Untagged
+  - Layer: Patient
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
