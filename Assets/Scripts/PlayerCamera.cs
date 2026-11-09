@@ -7,6 +7,7 @@ public class PlayerCamera : MonoBehaviour
     public Transform playerBody;
     public Transform head;
     public Inspection inspectionScript;
+    public AmputationMinigame sawingMinigame;
 
     [Header("Lantern Settings")] 
     public Transform lanternAnchor;
@@ -59,6 +60,11 @@ public class PlayerCamera : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (sawingMinigame.isSawing)
+        {
+            return;
+        }
+        
         float mouseX;
         float mouseY;
 

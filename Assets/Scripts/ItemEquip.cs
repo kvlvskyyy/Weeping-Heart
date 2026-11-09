@@ -32,19 +32,12 @@ public class ItemEquip : MonoBehaviour
     void Update()
     {
         if (addSyringeAction.WasPressedThisFrame())
-        {
+        
             GameManager.Instance.AddItem(Mathf.RoundToInt(syringeCount), "Syringe");
-        }
 
-        if (equipSyringeAction.WasPressedThisFrame())
-        {
-            EquipSyringe();
-        }
+        if (equipSyringeAction.WasPressedThisFrame()) EquipSyringe();
 
-        if (injectAction.WasPressedThisFrame() && syringeEquipped)
-        {
-            TryInject();
-        }
+        if (injectAction.WasPressedThisFrame() && syringeEquipped) TryInject();
     }
 
     void EquipSyringe()

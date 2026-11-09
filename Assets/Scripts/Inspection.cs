@@ -8,6 +8,9 @@ public class Inspection : MonoBehaviour
     public InputAction leaveInspectionAction;
     public InputAction amputateAction;
     
+    public AmputationMinigame sawMinigame;
+    
+    
     public bool isInspecting = false;
     
     public Transform currentAnchor;
@@ -43,11 +46,16 @@ public class Inspection : MonoBehaviour
     
     void Start()
     {
-        
+        if (sawMinigame == null)
+        {
+            sawMinigame = GetComponent<AmputationMinigame>();
+        }
     }
 
     void Update()
     {
+        if (sawMinigame != null && sawMinigame.isSawing) return;
+        
         if (PlayerMovement.isInHouse)
         {
             if (isInspecting == true)
@@ -74,21 +82,28 @@ public class Inspection : MonoBehaviour
 
                     if (amputateAction.WasPressedThisFrame())
                     {
-                        PatientInfection patientInfection = currentAnchor.GetComponentInParent<PatientInfection>();
+                        Transform limbToCut = selectedBodyPart;
+                        Transform limbSawAnchor = FindSawAnchor(limbToCut);
 
-                        if (patientInfection != null)
+                        limbToCut.localRotation = initialRotation;
+
+                        if (limbSawAnchor == null)
                         {
-                            patientInfection.AmputateLimb(selectedBodyPart);
+                            Debug.LogWarning("No Saw anchor found on " + limbToCut.name);
                         }
-                        else
+
+                        if (sawMinigame == null)
                         {
-                            selectedBodyPart.localScale = Vector3.zero;
-                            selectedBodyPart.GetComponent<Collider>().enabled = false;
+                            Debug.LogWarning("No Saw minigame found");
                         }
-                        
-                        isManipulating = false;
-                        selectedBodyPart = null;
-                        spotLight.gameObject.SetActive(false);
+
+                        if (limbSawAnchor != null && sawMinigame != null)
+                        {
+                            sawMinigame.StartSawing(limbSawAnchor, () =>
+                            {
+                                ExecuteAmputation(limbToCut);
+                            });
+                        }
                     }
                 }
                 else
@@ -140,6 +155,56 @@ public class Inspection : MonoBehaviour
                 }
             }
         }
+    }
+
+    private Transform FindSawAnchor(Transform limb)
+    {
+        int sawAnchorLayer = LayerMask.NameToLayer("SawAnchor");
+        
+        foreach (Transform directChild in limb)
+        {
+            if (directChild.gameObject.layer == sawAnchorLayer || directChild.name.Contains("SawAnchor"))
+            {
+                return directChild;
+            }
+        }
+        
+        foreach (Transform directChild in limb)
+        {
+            if (((1 << directChild.gameObject.layer) & inspectableLayer) != 0)
+                continue;
+
+            foreach (Transform grandChild in directChild)
+            {
+                if (grandChild.gameObject.layer == sawAnchorLayer || grandChild.name.Contains("SawAnchor"))
+                {
+                    return grandChild;
+                }
+            }
+        }
+
+        Debug.LogWarning("No direct SawAnchor found on " + limb.name);
+        return null;
+    }
+
+    private void ExecuteAmputation(Transform limbToCut)
+    {
+        PatientInfection patientInfection = currentAnchor.GetComponentInParent<PatientInfection>();
+
+                        
+        if (patientInfection != null)
+        {
+            patientInfection.AmputateLimb(limbToCut);
+        }
+        else
+        {
+            selectedBodyPart.localScale = Vector3.zero;
+            selectedBodyPart.GetComponent<Collider>().enabled = false;
+        }
+                        
+        isManipulating = false;
+        selectedBodyPart = null;
+        spotLight.gameObject.SetActive(false);
     }
 }
 
