@@ -64,6 +64,12 @@ public class PlayerMovement : MonoBehaviour
                         door.EnterScene();
                     }
                 }
+
+                else
+                {
+                    Debug.Log($"Hit: '{hit.collider.gameObject.name}' | Tag: '{hit.collider.tag}'", hit.collider.gameObject);
+                
+                }
             }
         }
 

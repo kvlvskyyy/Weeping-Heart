@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7855513915894941954}
   - component: {fileID: 8204525316177897118}
   - component: {fileID: 8328188516506970749}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 9037763662297755305}
   - component: {fileID: 8640305464263115784}
   - component: {fileID: 396611903099305939}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2734,7 +2734,7 @@ GameObject:
   - component: {fileID: 6749385043263027112}
   - component: {fileID: 8901171697947983044}
   - component: {fileID: 4386038112983604712}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Heat Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5185,7 +5185,7 @@ GameObject:
   - component: {fileID: 1239937535035308459}
   - component: {fileID: 1667692867227427681}
   - component: {fileID: 694381288267513380}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7813,6 +7813,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4103835028498242169}
+  - {fileID: 5011430408162690900}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1076365269179651208
@@ -8087,7 +8088,7 @@ GameObject:
   - component: {fileID: 2866861577801384487}
   - component: {fileID: 5733530115987022295}
   - component: {fileID: 4491648775000090452}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flames Secondary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10666,7 +10667,7 @@ GameObject:
   - component: {fileID: 6847502091541916392}
   - component: {fileID: 2030704549739296906}
   - component: {fileID: 301050426932539203}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -10772,7 +10773,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -10902,7 +10903,7 @@ GameObject:
   - component: {fileID: 2434413117167961258}
   - component: {fileID: 8495608823078774376}
   - component: {fileID: 7334522732983370199}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VFX_Fire_01_Small_Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13310,7 +13311,7 @@ GameObject:
   - component: {fileID: 7142178426497483392}
   - component: {fileID: 8190481583712371376}
   - component: {fileID: 7775593729971255795}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15876,6 +15877,55 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!1 &3608308229109549294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5011430408162690900}
+  - component: {fileID: 2833465062802646922}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5011430408162690900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3608308229109549294}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7042869, z: -0, w: 0.7099155}
+  m_LocalPosition: {x: 34.2432, y: 0.79364574, z: -71.99492}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5750555990703346923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2833465062802646922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3608308229109549294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 9ccc7eecb1134cd409e57c78ed154b73, type: 2}
 --- !u!1 &4942057816721340886
 GameObject:
   m_ObjectHideFlags: 0
@@ -15885,7 +15935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803110674499463886}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15918,7 +15968,7 @@ GameObject:
   - component: {fileID: 1347761324074363376}
   - component: {fileID: 2568702481928536060}
   - component: {fileID: 732634701720913469}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16045,7 +16095,7 @@ GameObject:
   - component: {fileID: 8231966217770221948}
   - component: {fileID: 8354596858712884237}
   - component: {fileID: 648852151779729893}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flames Secondary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18620,7 +18670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6451176709229631238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18655,7 +18705,7 @@ GameObject:
   - component: {fileID: 2946682694580176888}
   - component: {fileID: 506399466031397189}
   - component: {fileID: 1302758783365775435}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VFX_Fire_01_Small_Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21063,7 +21113,7 @@ GameObject:
   - component: {fileID: 2845176853640290117}
   - component: {fileID: 8173839959329551945}
   - component: {fileID: 2110695576425498666}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23667,7 +23717,7 @@ GameObject:
   - component: {fileID: 1054850559063910096}
   - component: {fileID: 7026364656647614502}
   - component: {fileID: 2288181580720808648}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Heat Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26115,13 +26165,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8094698679690040164}
     m_Modifications:
+    - target: {fileID: 134898, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 146852, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
       propertyPath: m_Name
       value: LanternV1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 146852, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 146852, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 164836, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 426026, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
       propertyPath: m_LocalScale.x
@@ -26213,6 +26275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4103835028498242169}
     m_Modifications:
+    - target: {fileID: -8891083115150789904, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.7356322
@@ -26265,13 +26331,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: -3001907804221729942, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_Name
       value: Syringe
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c991873bb16996489a69492afd3962f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321182673545115311, guid: 5c991873bb16996489a69492afd3962f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26296,9 +26374,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4103835028498242169}
     m_Modifications:
+    - target: {fileID: 134898, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 146852, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
       propertyPath: m_Name
       value: LanternV1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146852, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 164836, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 426026, guid: 98ca2421c28ce2748a5cb8f4fd291ead, type: 3}
       propertyPath: m_LocalScale.x
