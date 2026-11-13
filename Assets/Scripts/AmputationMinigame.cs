@@ -8,6 +8,8 @@ public class AmputationMinigame : MonoBehaviour
 { 
     public enum Axis { X, Y, Z }
     
+    private int lastScreamIndex = -1;
+    
     [Header("Saw References")] 
         public Transform currentSawModel;
         public GameObject currentSawVisuals;
@@ -17,6 +19,8 @@ public class AmputationMinigame : MonoBehaviour
             public float sinkDepth = 0.1f;
             public float mouseSensitivity = 0.002f;
             public float cutSpeed = 0.4f;
+            private float sawEffectTimer = 0f;
+            public float effectGraceTime = 0.15f;
             
     [Header("Direction Fixes")]
     [Tooltip("Check this if the saw goes UP instead of DOWN into the limb!")]
@@ -24,9 +28,13 @@ public class AmputationMinigame : MonoBehaviour
             public Axis strokeAxis = Axis.Z;
             public Axis depthAxis = Axis.Y;
             
-    /*[Header("Audio / Effects (Optional)")]
+    [Header("Audio / Effects")]
             public AudioSource sawAudio;
-            public ParticleSystem bloodParticles;*/
+            public ParticleSystem bloodParticles;
+            public AudioSource screamAudio;
+            public AudioClip[] screamClips;
+            public AudioClip finalSeverSound;
+            public AudioClip finalScreamSound;
     
     public bool isSawing = false;
     private float currentStrokePos = 0f;
@@ -57,6 +65,12 @@ public class AmputationMinigame : MonoBehaviour
         if (currentSawVisuals != null) 
             currentSawVisuals.SetActive(true);
         
+        if (bloodParticles != null)
+        {
+            bloodParticles.transform.position = targetAnchor.position;
+            bloodParticles.transform.rotation = targetAnchor.rotation;
+        }
+        
         Cursor.lockState =  CursorLockMode.Locked;
         Cursor.visible = false;
         
@@ -79,8 +93,38 @@ public class AmputationMinigame : MonoBehaviour
         if (actualMove > 0.0001f)
         {
             cutProgress += actualMove * cutSpeed;
-            Debug.Log(cutProgress);
-            Camera.main.fieldOfView = Mathf.Lerp(90f, 50f, cutProgress);
+            Camera.main.fieldOfView = Mathf.Lerp(90f, 50f, cutProgress / 0.1f);
+            
+            sawEffectTimer = effectGraceTime;
+            
+            if (bloodParticles != null && !bloodParticles.isPlaying)
+                bloodParticles.Play();
+            
+            if (sawAudio != null && !sawAudio.isPlaying)
+            {
+                if (sawAudio.time > 0f)
+                    sawAudio.UnPause();
+                else
+                    sawAudio.Play();
+            }
+            
+            if (screamAudio != null && screamClips != null && screamClips.Length > 0 && !screamAudio.isPlaying)
+            {
+                PlayRandomScream();
+            }
+        }
+        else
+        {
+            sawEffectTimer -= Time.deltaTime;
+            
+            if (sawEffectTimer <= 0f)
+            {
+                if (bloodParticles != null && bloodParticles.isPlaying)
+                    bloodParticles.Stop();
+
+                if (sawAudio != null && sawAudio.isPlaying)
+                    sawAudio.Pause();
+            }
         }
         
         float targetDepth = invertDepth ? sinkDepth : -sinkDepth;
@@ -115,11 +159,57 @@ public class AmputationMinigame : MonoBehaviour
         
         if (currentSawVisuals != null) currentSawVisuals.SetActive(false);
         
+        if (sawAudio != null) sawAudio.Stop();
+        if (screamAudio != null) screamAudio.Stop();
+        
+        if (sawAudio != null && finalSeverSound != null)
+        {
+            sawAudio.PlayOneShot(finalSeverSound);
+        }
+
+        StartCoroutine(PlayFinalAudioSequence());
+        
         Camera.main.fieldOfView = 90f;
         
         onAmputationComplete?.Invoke();
         
         Debug.Log("Complete Amputation");
+    }
+    
+    private System.Collections.IEnumerator PlayFinalAudioSequence()
+    {
+        float waitTime = 0.5f;
+        
+        if (sawAudio != null && finalSeverSound != null)
+        {
+            sawAudio.PlayOneShot(finalSeverSound);
+            waitTime = finalSeverSound.length;
+        }
+
+        yield return new WaitForSeconds(waitTime);
+        
+        if (screamAudio != null && finalScreamSound != null)
+        {
+            screamAudio.PlayOneShot(finalScreamSound);
+        }
+    }
+    
+    private void PlayRandomScream()
+    {
+        if (screamAudio == null || screamClips == null || screamClips.Length == 0 || screamAudio.isPlaying) 
+            return;
+
+        int randomIndex = UnityEngine.Random.Range(0, screamClips.Length);
+        
+        if (screamClips.Length > 1 && randomIndex == lastScreamIndex)
+        {
+            randomIndex = (randomIndex + 1) % screamClips.Length;
+        }
+
+        lastScreamIndex = randomIndex;
+        screamAudio.clip = screamClips[randomIndex];
+        screamAudio.pitch = UnityEngine.Random.Range(0.92f, 1.08f);
+        screamAudio.Play();
     }
     
 }

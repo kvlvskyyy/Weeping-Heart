@@ -13,17 +13,8 @@
     <list default="true" id="91b5bd36-d91b-4712-8aa8-6e821b1cdbec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Weeping-Heart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Weeping-Heart/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Objects/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BakerHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BakerHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BlacksmithHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BlacksmithHouse.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BotanistHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BotanistHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ElderHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ElderHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FarmerHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FarmerHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HouseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HouseScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MillerHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MillerHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhilosopherHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhilosopherHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WeaverHouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WeaverHouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AmputationMinigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AmputationMinigame.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
