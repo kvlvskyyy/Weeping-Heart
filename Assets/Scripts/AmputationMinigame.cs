@@ -9,6 +9,7 @@ public class AmputationMinigame : MonoBehaviour
     public enum Axis { X, Y, Z }
     
     private int lastScreamIndex = -1;
+    private bool isFinishingCut = false;
     
     [Header("Saw References")] 
         public Transform currentSawModel;
@@ -23,7 +24,6 @@ public class AmputationMinigame : MonoBehaviour
             public float effectGraceTime = 0.15f;
             
     [Header("Direction Fixes")]
-    [Tooltip("Check this if the saw goes UP instead of DOWN into the limb!")]
             public bool invertDepth = true; 
             public Axis strokeAxis = Axis.Z;
             public Axis depthAxis = Axis.Y;
@@ -73,8 +73,6 @@ public class AmputationMinigame : MonoBehaviour
         
         Cursor.lockState =  CursorLockMode.Locked;
         Cursor.visible = false;
-        
-        
     }
 
     void Update()
@@ -119,9 +117,6 @@ public class AmputationMinigame : MonoBehaviour
             
             if (sawEffectTimer <= 0f)
             {
-                if (bloodParticles != null && bloodParticles.isPlaying)
-                    bloodParticles.Stop();
-
                 if (sawAudio != null && sawAudio.isPlaying)
                     sawAudio.Pause();
             }
@@ -136,9 +131,9 @@ public class AmputationMinigame : MonoBehaviour
         
         currentSawModel.localPosition = initialSawLocalPos + offset;
         
-        if (cutProgress >= 0.1f)
+        if (cutProgress >= 0.1f && !isFinishingCut)
         {
-            CompleteAmputation();
+            StartCoroutine(CompleteAmputationSequence());
         }
     }
     
@@ -152,46 +147,34 @@ public class AmputationMinigame : MonoBehaviour
         }
         return vector;
     }
-
-    private void CompleteAmputation()
-    {
-        isSawing = false;
         
-        if (currentSawVisuals != null) currentSawVisuals.SetActive(false);
+    
+    private System.Collections.IEnumerator CompleteAmputationSequence()
+    {
+        isFinishingCut = true;
+        float waitSoundTime = 0.5f;
+        float waitMoveTime = 1f;
         
         if (sawAudio != null) sawAudio.Stop();
         if (screamAudio != null) screamAudio.Stop();
-        
         if (sawAudio != null && finalSeverSound != null)
         {
             sawAudio.PlayOneShot(finalSeverSound);
+            waitSoundTime = finalSeverSound.length;
         }
 
-        StartCoroutine(PlayFinalAudioSequence());
-        
-        Camera.main.fieldOfView = 90f;
-        
-        onAmputationComplete?.Invoke();
-        
-        Debug.Log("Complete Amputation");
-    }
-    
-    private System.Collections.IEnumerator PlayFinalAudioSequence()
-    {
-        float waitTime = 0.5f;
-        
-        if (sawAudio != null && finalSeverSound != null)
-        {
-            sawAudio.PlayOneShot(finalSeverSound);
-            waitTime = finalSeverSound.length;
-        }
-
-        yield return new WaitForSeconds(waitTime);
-        
+        yield return new WaitForSeconds(waitSoundTime);
         if (screamAudio != null && finalScreamSound != null)
         {
             screamAudio.PlayOneShot(finalScreamSound);
         }
+        
+        yield return new WaitForSeconds(waitMoveTime);
+        isSawing = false;
+        if (currentSawVisuals != null) currentSawVisuals.SetActive(false);
+        isFinishingCut = false;
+        Camera.main.fieldOfView = 90f;
+        onAmputationComplete?.Invoke();
     }
     
     private void PlayRandomScream()
