@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 07677cf2cd45cb041850265927551758
-timeCreated: 1436688225
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Materials/RocksV1_Tilled.mat
   uploadId: 72216
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

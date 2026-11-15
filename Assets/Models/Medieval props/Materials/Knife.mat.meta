@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: abf6a0b64fff4614d931db5bd29236e9
-timeCreated: 1436699713
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Materials/Knife.mat
   uploadId: 72216
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

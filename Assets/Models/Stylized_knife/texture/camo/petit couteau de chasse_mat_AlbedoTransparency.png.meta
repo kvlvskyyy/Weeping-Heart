@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 7f0b5c32650d7bb4c9a634f1f09e04dc
+AssetOrigin:
+  serializedVersion: 1
+  productId: 377896
+  packageName: Game ready Stylized Knife Pack - PBR material & 5 skins
+  packageVersion: 1.0
+  assetPath: Assets/CasayonaStudio/Stylized_knife/texture/camo/petit couteau de chasse_mat_AlbedoTransparency.png
+  uploadId: 910272
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -53,7 +60,9 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 0
+  spriteTessellationMethod: 0
   spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
   textureType: 0
   textureShape: 1
   singleChannelComponent: 0
@@ -128,10 +137,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 377896
-  packageName: Game ready Stylized Knife Pack - PBR material & 5 skins
-  packageVersion: 1.0
-  assetPath: Assets/CasayonaStudio/Stylized_knife/texture/camo/petit couteau de chasse_mat_AlbedoTransparency.png
-  uploadId: 910272

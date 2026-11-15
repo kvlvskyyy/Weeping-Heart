@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: fa5538dc4cc2b7a458598cd3b5842b91
-timeCreated: 1436462027
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Prefabs/PileOfWoodV1.prefab
   uploadId: 72216
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

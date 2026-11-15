@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: b3f5665b7980adf40abc8544de5d7588
-timeCreated: 1436458276
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Prefabs/TableV3.prefab
   uploadId: 72216
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

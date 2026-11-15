@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: f273fda7fc193344e8630e0a664de042
-timeCreated: 1436260958
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Materials/GG.mat
   uploadId: 72216
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

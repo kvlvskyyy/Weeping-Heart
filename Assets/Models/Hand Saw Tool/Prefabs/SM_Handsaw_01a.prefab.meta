@@ -1,10 +1,5 @@
 fileFormatVersion: 2
 guid: 776f02a82155e3a4bae56c7f5562a977
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 338192
@@ -12,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Hand Saw Tool/Prefabs/SM_Handsaw_01a.prefab
   uploadId: 800486
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: ad36f98d350546a47bdb3336300e66aa
+AssetOrigin:
+  serializedVersion: 1
+  productId: 377896
+  packageName: Game ready Stylized Knife Pack - PBR material & 5 skins
+  packageVersion: 1.0
+  assetPath: Assets/CasayonaStudio/Stylized_knife/knife/ReflectionProbe-0.exr
+  uploadId: 910272
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -53,7 +60,9 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 0
+  spriteTessellationMethod: 0
   spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
   textureType: 0
   textureShape: 2
   singleChannelComponent: 0
@@ -128,10 +137,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 377896
-  packageName: Game ready Stylized Knife Pack - PBR material & 5 skins
-  packageVersion: 1.0
-  assetPath: Assets/CasayonaStudio/Stylized_knife/knife/ReflectionProbe-0.exr
-  uploadId: 910272

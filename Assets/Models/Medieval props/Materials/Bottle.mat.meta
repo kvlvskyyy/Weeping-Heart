@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 088e7f9cb2e0b5a4f934613dcc4de356
-timeCreated: 1436723867
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Materials/Bottle.mat
   uploadId: 72216
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

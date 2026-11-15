@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 277f4417da1eb3c45a38e6486eef74b7
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 112000000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 377896
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/CasayonaStudio/Stylized_knife/knife/LightingData.asset
   uploadId: 910272
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

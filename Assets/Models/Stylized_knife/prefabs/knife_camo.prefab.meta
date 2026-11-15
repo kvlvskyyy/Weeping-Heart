@@ -1,10 +1,5 @@
 fileFormatVersion: 2
 guid: fcc8b66c0df68ae48985a062ce58ba6a
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 377896
@@ -12,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/CasayonaStudio/Stylized_knife/prefabs/knife_camo.prefab
   uploadId: 910272
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

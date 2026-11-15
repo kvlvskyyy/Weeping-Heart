@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 357c68b0034f10d4cb97f7b2476504fc
-timeCreated: 1436444770
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Prefabs/CandleV3.prefab
   uploadId: 72216
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

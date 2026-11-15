@@ -1,10 +1,5 @@
 fileFormatVersion: 2
 guid: 11fa2034a1fc7ed40b0a644fa680c340
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 266226
@@ -12,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0.2023.1
   assetPath: Assets/Vefects/Free Fire VFX URP/Particles/VFX_Fire_Floor_02.prefab
   uploadId: 732705
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

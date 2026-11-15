@@ -1,10 +1,5 @@
 fileFormatVersion: 2
 guid: 8206b722d11501a449d6a278cca2adfa
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 266226
@@ -12,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0.2023.1
   assetPath: Assets/Vefects/Free Fire VFX URP/Particles/VFX_Fire_01_Big_Smoke.prefab
   uploadId: 732705
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

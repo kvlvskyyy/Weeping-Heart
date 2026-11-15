@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: b600b659bd31c8d4a8fa16114dd45911
-timeCreated: 1445337889
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 58289
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/low poly medieval buildings/Materials/plaster.mat
   uploadId: 107751
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

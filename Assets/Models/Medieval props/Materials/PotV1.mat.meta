@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: d6c672496e0d17a47b73d28948701499
-timeCreated: 1436353201
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Materials/PotV1.mat
   uploadId: 72216
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

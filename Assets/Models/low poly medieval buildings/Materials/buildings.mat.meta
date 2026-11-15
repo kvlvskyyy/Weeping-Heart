@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 851bab95ee12735428f69ec37b215bd0
-timeCreated: 1446208182
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 58289
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/low poly medieval buildings/Materials/buildings.mat
   uploadId: 107751
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

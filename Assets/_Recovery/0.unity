@@ -1567,32 +1567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815bbe48a50e364f8bccd0b4dba5282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DaySystemsScript
-  patients:
-  - {fileID: 1383295905}
-  isDay: 0
-  maxPatients: 4
-  currentPatients: 0
-  foodCost: 30
-  canLeave: 0
-  canEnter: 1
-  enterHouse:
-    m_Name: Enter House
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: df9c0e41-5b79-4a53-b2ce-dff4070a2a79
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 64d3b431-433a-4986-8da8-50f5e150e1bb
-      m_Path: <Keyboard>/numpad1
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Enter House
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
+  isHouseScene: 0
+  villageSceneName: Village
   leaveHouse:
     m_Name: Leave House
     m_Type: 0
@@ -1611,17 +1587,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
---- !u!114 &1383295905 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1735926833276314583, guid: 5b650b583ec96be4d97cc856a3bc1c16, type: 3}
-  m_PrefabInstance: {fileID: 361544325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78777a2237816004488f200acabf3c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PatientInfection
 --- !u!1 &1687541390
 GameObject:
   m_ObjectHideFlags: 0

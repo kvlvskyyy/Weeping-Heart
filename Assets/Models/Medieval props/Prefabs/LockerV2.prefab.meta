@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 65107955598e88243b0c1cc7dd54e1cc
-timeCreated: 1436543611
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 41540
@@ -13,3 +7,8 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Medieval props/Prefabs/LockerV2.prefab
   uploadId: 72216
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 0a3493a84faf7a64ba93f872075b55ce
-timeCreated: 1445595201
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 58289
@@ -13,3 +7,9 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/low poly medieval buildings/Materials/beam.mat
   uploadId: 107751
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
