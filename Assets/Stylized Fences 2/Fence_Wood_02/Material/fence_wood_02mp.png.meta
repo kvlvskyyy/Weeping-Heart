@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: fff5734b386c34e418077c4dd24d1e2e
-AssetOrigin:
-  serializedVersion: 1
-  productId: 331145
-  packageName: Stylized Fences 2
-  packageVersion: 1.0
-  assetPath: Assets/Stylized Fences 2/Fence_Wood_02/Material/fence_wood_02mp.png
-  uploadId: 783392
+guid: fbe283edbac115841a46ca1df30ef836
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

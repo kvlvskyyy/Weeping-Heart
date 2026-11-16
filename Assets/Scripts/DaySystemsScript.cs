@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class DaySystemsScript : MonoBehaviour
 {
     public bool isHouseScene = false;
-    public string villageSceneName = "Village";
+    static public string villageSceneName = "Village";
 
     public InputAction leaveHouse;
 
@@ -31,7 +31,7 @@ public class DaySystemsScript : MonoBehaviour
         }
     }
 
-    private void LeaveHouse()
+    public static void LeaveHouse()
     {
         GameManager manager = GameManager.Instance;
         MoneyScript moneyScript = MoneyScript.Instance;
@@ -48,9 +48,8 @@ public class DaySystemsScript : MonoBehaviour
         if (manager.patientsVisited >= manager.maxPatients)
         {
             moneyScript.UpdateMoneyAmount();
-            manager.EndDay();
         }
-        else
+        else 
         {
             SceneManager.LoadScene(villageSceneName);
         }

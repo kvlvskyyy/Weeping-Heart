@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: f61dbef0d12d35f4b9fbf8cfded48f9a
-AssetOrigin:
-  serializedVersion: 1
-  productId: 54622
-  packageName: Realistic Tree 9
-  packageVersion: 1.0
-  assetPath: Assets/Tree9/Tree9_1_Textures/translucency_gloss.png
-  uploadId: 99758
+guid: 532cfd958f1d0aa49aced653d43241a6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -14,8 +7,8 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 0
-    linearTexture: 1
+    sRGBTexture: 1
+    linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
@@ -37,7 +30,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -72,9 +65,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform

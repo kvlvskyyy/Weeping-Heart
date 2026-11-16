@@ -24,6 +24,7 @@ public class PatientInfection : MonoBehaviour
         }
 
         RefreshFromData();
+
     }
 
     public void RefreshFromData()

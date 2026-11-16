@@ -16,15 +16,24 @@ public class SceneEntering : MonoBehaviour
             return;
         }
 
-        if (!manager.CanVisitPatient())
+        if (manager.patientsVisited >= manager.maxPatients)
         {
-            Debug.Log("Done 4 2day");
+            manager.EndDay();
             return;
         }
 
         if (!manager.RegisterVisit()) return;
 
-        PlayerMovement.isInHouse = true;
-        SceneManager.LoadScene(sceneToLoad);
+        if (PlayerMovement.isInHouse == false)
+        {
+            PlayerMovement.isInHouse = true;
+        }
+        else if (PlayerMovement.isInHouse == true)
+        {
+            PlayerMovement.isInHouse = false;
+            DaySystemsScript.LeaveHouse();
+        }
+
+            SceneManager.LoadScene(sceneToLoad);
     }
 }

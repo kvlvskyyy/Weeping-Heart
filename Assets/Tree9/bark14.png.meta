@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 78e60ad3a8152ec46be748bb6d5a7cdf
-AssetOrigin:
-  serializedVersion: 1
-  productId: 54622
-  packageName: Realistic Tree 9
-  packageVersion: 1.0
-  assetPath: Assets/Tree9/bark14.png
-  uploadId: 99758
+guid: 03d57d6bf235c9f4a8d96b7e88580795
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,7 +30,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -72,9 +65,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform

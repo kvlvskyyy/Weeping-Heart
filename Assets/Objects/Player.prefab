@@ -7995,7 +7995,7 @@ MonoBehaviour:
   lanternLimitX: 2
   lanternLimitY: 0.8
   sensitivity: 15
-  inspectionSensitivity: 5
+  inspectionSensitivity: 2
   maxLookAngle: 89
   panSpeed: 1
   panLimitX: 1.5

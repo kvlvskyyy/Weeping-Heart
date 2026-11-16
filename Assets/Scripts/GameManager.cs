@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+
     public List<PatientData> allPatients = new List<PatientData>();
 
     public int currentDay = 1;
@@ -36,6 +37,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        foreach (PatientData patient in allPatients)
+        {
+            patient.infectionSeverity = Random.Range(0, 2);
+        }
+    }
+
     public PatientData GetPatientData(string id)
     {
         return allPatients.Find(p => p.patientID == id);
@@ -50,8 +59,12 @@ public class GameManager : MonoBehaviour
     {
         if (!CanVisitPatient())
             return false;
-
-        patientsVisited++;
+        if (PlayerMovement.isInHouse)
+        {
+            patientsVisited++;
+            PlayerMovement.isInHouse = true;
+            Debug.Log(patientsVisited);
+        }
         return true;
     }
 
@@ -63,7 +76,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Day " + currentDay);
 
         ProgressAllPatients();
-        SceneManager.LoadScene("DaySummary"); 
+        SceneManager.LoadScene("DaySummary");
     }
 
     public void ProgressAllPatients()
